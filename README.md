@@ -36,7 +36,11 @@ git clone https://github.com/leekeunha/lotto_laos_web.git
 
 yarn
 
-10. 개발 서버 실행
+10. eslint 설치
+
+11. Prettier 설치
+
+12. 개발 서버 실행
 
 yarn dev
 
@@ -44,9 +48,9 @@ yarn dev
 
 yarn build
 
-# TODO : Lint 설정 하는 방법 그림으로 하기.
+# TODO : Lint 설정 하는 방법 그림으로 하기.lsss
 
-12. Code snippets(설치)
+12. Code snippets(옵션)
 <!-- {
   "reactFunction": {
     "prefix": "rfc",
@@ -63,5 +67,10 @@ yarn build
     "body": ["className={styles.$1}"],
     "description": "Adding className"
   },
-
+  "Print to console": {
+    "prefix": "cl",
+    "scope": "javascript,typescript,javascriptreact",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
 } -->
