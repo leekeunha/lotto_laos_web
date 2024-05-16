@@ -6,10 +6,10 @@ import Topbar from './Topbar';
 
 function AppLayout() {
     return (
-        <div className="">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Header />
             <Topbar />
-            <main className="bg-gray-50 p-16 overflow-auto">
+            <main className=" p-16 overflow-auto">
                 <div className="max-w-screen-2xl mx-auto flex flex-col gap-8">
                     <Outlet />
                 </div>

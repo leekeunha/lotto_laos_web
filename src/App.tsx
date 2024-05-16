@@ -37,8 +37,9 @@ function App() {
                         <Route path="gift-game" element={<GiftGame />} />
                         <Route path="store" element={<Store />} />
                         <Route path="about-dlpe" element={<AboutDlpe />} />
+                        <Route path="login" element={<Login />}></Route>
                     </Route>
-                    <Route path="login" element={<Login />}></Route>
+
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </BrowserRouter>

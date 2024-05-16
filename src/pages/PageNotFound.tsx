@@ -5,8 +5,8 @@ function PageNotFound() {
     const moveBack = useMoveBack();
 
     return (
-        <main className="h-screen bg-gray-50 flex items-center justify-center p-12">
-            <div className="bg-white border border-gray-400 rounded-md p-12 flex-none w-[96rem] text-center">
+        <main className="h-screen flex items-center justify-center p-12">
+            <div className="bg-white p-12 flex-none w-[96rem] text-center">
                 <div className="fs-1 fw-semibold mb-8">
                     The page you are looking for could not be found 😢
                 </div>
