@@ -6,7 +6,7 @@ import Topbar from './Topbar';
 
 function AppLayout() {
     return (
-        <div className="grid grid-cols-[26rem_1fr] grid-rows-[auto_1fr] h-screen">
+        <div className="">
             <Header />
             <Topbar />
             <main className="bg-gray-50 p-16 overflow-auto">
