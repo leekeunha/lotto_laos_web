@@ -8,9 +8,10 @@ export default function ProtectedRoute({ children }) {
 
     useEffect(
         function () {
-            if (!isAuthenticated && !isLoading) {
-                navigate('/login');
-            }
+            // 로그인 기능 완성될 때 까지 주석
+            // if (!isAuthenticated && !isLoading) {
+            //     navigate('/login');
+            // }
         },
         [isAuthenticated, isLoading, navigate],
     );

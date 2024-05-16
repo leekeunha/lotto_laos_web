@@ -5,3 +5,8 @@ export interface FormRowVerticalProps {
     error?: string;
     children: ReactNode;
 }
+
+export interface NavItemProps {
+    label: string;
+    to: string;
+}

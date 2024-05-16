@@ -1,9 +1,14 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ProtectedRoute from './ui/ProtectedRoute';
 import PageNotFound from './pages/PageNotFound';
 import AppLayout from './ui/AppLayout';
 import Login from './pages/Login';
+import LotteryInformation from './pages/LotteryInformation';
+import Result from './pages/Result';
+import GiftGame from './pages/GiftGame';
+import Store from './pages/Store';
+import AboutDlpe from './pages/AboutDlpe';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -21,11 +26,18 @@ function App() {
                 <Routes>
                     <Route
                         element={
-                            <ProtectedRoute>
-                                <AppLayout />
-                            </ProtectedRoute>
+                            // <ProtectedRoute>
+                            <AppLayout />
+                            // </ProtectedRoute>
                         }
-                    />
+                    >
+                        <Route index element={<Navigate replace to="lottery-information" />} />
+                        <Route path="lottery-information" element={<LotteryInformation />}></Route>
+                        <Route path="result" element={<Result />} />
+                        <Route path="gift-game" element={<GiftGame />} />
+                        <Route path="store" element={<Store />} />
+                        <Route path="about_dlpe" element={<AboutDlpe />} />
+                    </Route>
                     <Route path="login" element={<Login />}></Route>
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
