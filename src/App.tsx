@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@material-tailwind/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ProtectedRoute from './ ui/ProtectedRoute';
+import PageNotFound from './pages/PageNotFound';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,10 +26,11 @@ function App() {
               </ProtectedRoute>
             }
           >            
+          <Route path="login" element={<Login />}></Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
-  );
 }
 
 export default App;
