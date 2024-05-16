@@ -3,16 +3,16 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 export const useLogout = () => {
-  const navigate = useNavigate();
-  const queryClient = useQueryClient();
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
 
-  const { mutate: logout, isLoading } = useMutation({
-    mutationFn: logoutApi,
-    onSuccess: () => {
-      queryClient.removeQueries();
-      navigate('/login', { replace: true });
-    },
-  });
+    const { mutate: logout, isLoading } = useMutation({
+        mutationFn: logoutApi,
+        onSuccess: () => {
+            queryClient.removeQueries();
+            navigate('/login', { replace: true });
+        },
+    });
 
-  return { logout, isLoading };
+    return { logout, isLoading };
 };
