@@ -53,11 +53,6 @@ export const updateCurrentUser = async ({ password, fullName }) => {
         updateData = { password };
     }
 
-    //fullName은 happy545.com와는 상관 없으나 코드 참고를 위해 넣어 둠.
-    if (fullName) {
-        updateData = { data: { fullName } };
-    }
-
     const { data, error } = await supabase.auth.updateUser(updateData);
 
     if (error) {

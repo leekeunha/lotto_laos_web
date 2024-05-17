@@ -6,10 +6,12 @@ export default function HeaderMenu() {
 
     return (
         <div className="flex">
-            <Button className="mr-2" onClick={() => navigate('/login')}>
+            <Button size="sm" className="mr-2" onClick={() => navigate('/login')}>
                 LOGIN
             </Button>
-            <Button onClick={() => navigate('/join')}>JOIN</Button>
+            <Button size="sm" onClick={() => navigate('/join')}>
+                JOIN
+            </Button>
         </div>
     );
 }

@@ -9,6 +9,7 @@ import Result from './pages/Result';
 import GiftGame from './pages/GiftGame';
 import Store from './pages/Store';
 import AboutDlpe from './pages/AboutDlpe';
+import ServiceCenter from './pages/ServiceCenter';
 import Join from './pages/Join';
 import Home from './pages/Home';
 
@@ -28,6 +29,7 @@ function App() {
                 <Routes>
                     <Route
                         element={
+                            //TODO: 로그인 기능 들어가고 나서 주석 해제
                             // <ProtectedRoute>
                             <AppLayout />
                             // </ProtectedRoute>
@@ -40,6 +42,7 @@ function App() {
                         <Route path="gift-game" element={<GiftGame />} />
                         <Route path="store" element={<Store />} />
                         <Route path="about-dlpe" element={<AboutDlpe />} />
+                        <Route path="service-center" element={<ServiceCenter />} />
                         <Route path="login" element={<Login />}></Route>
                         <Route path="join" element={<Join />} />
                     </Route>

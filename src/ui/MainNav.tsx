@@ -9,6 +9,7 @@ export default function MainNav() {
                 <NavItem label="Gift Game" to="/gift-game" />
                 <NavItem label="Store" to="store" />
                 <NavItem label="About DLPE" to="about-dlpe" />
+                <NavItem label="Service center" to="service-center" />
             </ul>
         </nav>
     );
