@@ -9,12 +9,15 @@ function AppLayout() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Header />
+            <hr className="border-grey-400" />
             <Topbar />
+            <hr className="border-blue-400" />
             <main className="p-16 overflow-auto">
                 <div className="max-w-screen-2xl mx-auto flex flex-col gap-8">
                     <Outlet />
                 </div>
             </main>
+            <hr className="border-blue-400 my-10" />
             <Footer />
         </div>
     );

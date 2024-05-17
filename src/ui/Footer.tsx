@@ -3,7 +3,6 @@ import { Typography } from '@material-tailwind/react';
 export default function Footer() {
     return (
         <footer className="">
-            <hr className="my-8 border-blue-400" />
             <div className="flex justify-between">
                 <div>
                     <Typography variant="small">
