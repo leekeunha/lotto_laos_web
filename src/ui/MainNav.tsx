@@ -10,41 +10,59 @@ import {
 import { Square3Stack3DIcon } from '@heroicons/react/24/solid';
 import { NavLink } from 'react-router-dom';
 
-const navListMenuItems = [
+const resultNavListMenuItems = [
     {
-        // title: '@material-tailwind/html',
-        url: 'faq',
-        label: 'FAQ',
+        url: 'happy545',
+        label: 'Happy5/45',
     },
     {
-        // title: '@material-tailwind/react',
-        url: 'notice',
-        label: 'Notice',
+        url: 'jackpot-numbers',
+        label: 'Jackpot numbers',
     },
     {
-        // title: 'Material Tailwind PRO',
-        url: 'terms-of-service',
-        label: 'Terms of Service',
+        url: 'prize-payment',
+        label: 'Prize payment',
+    },
+    {
+        url: 'draw-video',
+        label: 'Draw video',
+    },
+    {
+        url: 'winners-interview',
+        label: "Winner's interview ",
+    },
+    {
+        url: 'unclaimed-winnings',
+        label: 'Unclaimed Winnings',
     },
 ];
 
 const lotteryNavListMenuItems = [
     {
-        // title: '@material-tailwind/html',
         url: 'happy545',
         label: 'Happy5/45',
     },
     {
-        // title: '@material-tailwind/react',
         url: 'introduction',
         label: 'introduction',
     },
     {
-        // title: 'Material Tailwind PRO',
         url: 'how-to-play',
         label: 'how-to-play',
     },
 ];
+
+function getNavMenuItems(navListMenuItems) {
+    return navListMenuItems.map(({ url, label }) => (
+        <NavLink to={url} key={label}>
+            <MenuItem>
+                <Typography variant="small" color="gray" className="font-normal">
+                    {label}
+                </Typography>
+            </MenuItem>
+        </NavLink>
+    ));
+}
 
 function NavListMenu() {
     const [isLotteryInfoOpen, setIsLotteryInfoOpen] = useState(false);
@@ -54,25 +72,7 @@ function NavListMenu() {
     const [isAboutDlpe, setIsAboutDlpe] = useState(false);
     const [isServiceCenter, setIsServiceCenter] = useState(false);
 
-    const renderItems = navListMenuItems.map(({ url, label }) => (
-        <NavLink to={url} key={label}>
-            <MenuItem>
-                <Typography variant="small" color="gray" className="font-normal">
-                    {label}
-                </Typography>
-            </MenuItem>
-        </NavLink>
-    ));
-
-    const renderLotteryNavListMenuItems = lotteryNavListMenuItems.map(({ url, label }) => (
-        <NavLink to={url} key={label}>
-            <MenuItem>
-                <Typography variant="small" color="gray" className="font-normal">
-                    {label}
-                </Typography>
-            </MenuItem>
-        </NavLink>
-    ));
+    const renderItems = getNavMenuItems(navListMenuItems);
 
     return (
         <>
@@ -86,7 +86,7 @@ function NavListMenu() {
                 </MenuHandler>
                 <MenuList className="">
                     <ul className="col-span-4 flex w-full flex-col gap-1">
-                        {renderLotteryNavListMenuItems}
+                        {getNavMenuItems(lotteryNavListMenuItems)}
                     </ul>
                 </MenuList>
             </Menu>
@@ -99,7 +99,9 @@ function NavListMenu() {
                     </Typography>
                 </MenuHandler>
                 <MenuList className="">
-                    <ul className="col-span-4 flex w-full flex-col gap-1">{renderItems}</ul>
+                    <ul className="col-span-4 flex w-full flex-col gap-1">
+                        {getNavMenuItems(result)}
+                    </ul>
                 </MenuList>
             </Menu>
             <Menu allowHover open={isGiftGame} handler={setIsGiftGame}>
