@@ -9,7 +9,7 @@ export default function HeaderMenu() {
             <Button className="mr-2" onClick={() => navigate('/login')}>
                 LOGIN
             </Button>
-            <Button onClick={() => navigate('/singup')}>JOIN</Button>
+            <Button onClick={() => navigate('/join')}>JOIN</Button>
         </div>
     );
 }

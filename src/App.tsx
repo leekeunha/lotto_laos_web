@@ -9,6 +9,7 @@ import Result from './pages/Result';
 import GiftGame from './pages/GiftGame';
 import Store from './pages/Store';
 import AboutDlpe from './pages/AboutDlpe';
+import Join from './pages/Join';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -38,6 +39,7 @@ function App() {
                         <Route path="store" element={<Store />} />
                         <Route path="about-dlpe" element={<AboutDlpe />} />
                         <Route path="login" element={<Login />}></Route>
+                        <Route path="join" element={<Join />} />
                     </Route>
 
                     <Route path="*" element={<PageNotFound />} />
