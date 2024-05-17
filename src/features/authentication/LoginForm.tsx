@@ -25,15 +25,12 @@ function LoginForm() {
     }
 
     return (
-        <Card color="transparent" shadow={false}>
-            <Typography variant="h4" color="blue-gray">
+        <Card className="flex flex-col items-center" color="transparent" shadow={false}>
+            <Typography className="text-left" as="div" variant="h4" color="blue-gray">
                 Log in
             </Typography>
             <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={handleSubmit}>
                 <div className="mb-1 flex flex-col gap-6">
-                    <Typography variant="h6" color="blue-gray" className="-mb-3">
-                        Your Email
-                    </Typography>
                     <Input
                         size="lg"
                         placeholder="name@mail.com"
@@ -45,9 +42,6 @@ function LoginForm() {
                         onChange={(e) => setEmail(e.target.value)}
                         disabled={isLoading}
                     />
-                    <Typography variant="h6" color="blue-gray" className="-mb-3">
-                        Password
-                    </Typography>
                     <Input
                         type="password"
                         size="lg"
