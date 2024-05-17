@@ -10,6 +10,7 @@ import GiftGame from './pages/GiftGame';
 import Store from './pages/Store';
 import AboutDlpe from './pages/AboutDlpe';
 import Join from './pages/Join';
+import Home from './pages/Home';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -32,7 +33,8 @@ function App() {
                             // </ProtectedRoute>
                         }
                     >
-                        <Route index element={<Navigate replace to="lottery-information" />} />
+                        <Route index element={<Navigate replace to="home" />}></Route>
+                        <Route path="home" element={<Home />}></Route>
                         <Route path="lottery-information" element={<LotteryInformation />}></Route>
                         <Route path="result" element={<Result />} />
                         <Route path="gift-game" element={<GiftGame />} />
