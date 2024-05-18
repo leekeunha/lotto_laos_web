@@ -1,4 +1,4 @@
-import { join as joinApi } from './../../services/api/auth';
+import { join as joinApi } from '../../api/auth';
 import { useMutation } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';

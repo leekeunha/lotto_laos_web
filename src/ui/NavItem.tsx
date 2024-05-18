@@ -1,5 +1,5 @@
 import { Typography } from '@material-tailwind/react';
-import { NavItemProps } from './interface';
+import { NavItemProps } from './types';
 import { NavLink } from 'react-router-dom';
 
 export default function NavItem({ label, to }: NavItemProps) {

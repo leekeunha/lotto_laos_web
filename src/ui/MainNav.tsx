@@ -7,10 +7,25 @@ import {
     MenuList,
     MenuItem,
 } from '@material-tailwind/react';
-import { Square3Stack3DIcon } from '@heroicons/react/24/solid';
+
 import { NavLink } from 'react-router-dom';
 
-const resultNavListMenuItems = [
+const lotteryMenuItems = [
+    {
+        url: 'happy545',
+        label: 'Happy5/45',
+    },
+    {
+        url: 'introduction',
+        label: 'introduction',
+    },
+    {
+        url: 'how-to-play',
+        label: 'how-to-play',
+    },
+];
+
+const resultMenuItems = [
     {
         url: 'happy545',
         label: 'Happy5/45',
@@ -37,18 +52,59 @@ const resultNavListMenuItems = [
     },
 ];
 
-const lotteryNavListMenuItems = [
+const giftGameMenuItems = [
     {
-        url: 'happy545',
-        label: 'Happy5/45',
+        url: 'happy-ball-5m',
+        label: 'Happy ball 5m',
     },
+    {
+        url: 'happy-ball-3m',
+        label: 'happy-ball-3m',
+    },
+    {
+        url: 'gold-digger',
+        label: 'Gold-digger',
+    },
+    {
+        url: 'gift-ranking',
+        label: 'Gift Ranking',
+    },
+    {
+        url: 'exchange-gift',
+        label: 'Exchange Gift',
+    },
+];
+
+const storeMenuItems = [
+    {
+        url: 'seach-store',
+        label: 'Search Store',
+    },
+];
+
+const aboutDlpeMenuItems = [
     {
         url: 'introduction',
-        label: 'introduction',
+        label: 'Introduction',
     },
     {
-        url: 'how-to-play',
-        label: 'how-to-play',
+        url: 'Contact',
+        label: 'contact',
+    },
+];
+
+const serviceCenterMenuItems = [
+    {
+        url: 'faq',
+        label: 'Faq',
+    },
+    {
+        url: 'notice',
+        label: 'Notice',
+    },
+    {
+        url: 'terms-of-service',
+        label: 'Terms of Service',
     },
 ];
 
@@ -72,21 +128,19 @@ function NavListMenu() {
     const [isAboutDlpe, setIsAboutDlpe] = useState(false);
     const [isServiceCenter, setIsServiceCenter] = useState(false);
 
-    const renderItems = getNavMenuItems(navListMenuItems);
-
     return (
         <>
             <Menu allowHover open={isLotteryInfoOpen} handler={setIsLotteryInfoOpen}>
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-                            Lottery Information{' '}
+                            Lottery Information
                         </MenuItem>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="">
                     <ul className="col-span-4 flex w-full flex-col gap-1">
-                        {getNavMenuItems(lotteryNavListMenuItems)}
+                        {getNavMenuItems(lotteryMenuItems)}
                     </ul>
                 </MenuList>
             </Menu>
@@ -94,13 +148,13 @@ function NavListMenu() {
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-                            Result{' '}
+                            Result
                         </MenuItem>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="">
                     <ul className="col-span-4 flex w-full flex-col gap-1">
-                        {getNavMenuItems(result)}
+                        {getNavMenuItems(resultMenuItems)}
                     </ul>
                 </MenuList>
             </Menu>
@@ -108,55 +162,58 @@ function NavListMenu() {
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-                            Gift Game{' '}
+                            Gift Game
                         </MenuItem>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="">
-                    <ul className="col-span-4 flex w-full flex-col gap-1">{renderItems}</ul>
+                    <ul className="col-span-4 flex w-full flex-col gap-1">
+                        {getNavMenuItems(giftGameMenuItems)}
+                    </ul>
                 </MenuList>
             </Menu>
             <Menu allowHover open={isStore} handler={setIsStore}>
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-                            Store{' '}
+                            Store
                         </MenuItem>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="">
-                    <ul className="col-span-4 flex w-full flex-col gap-1">{renderItems}</ul>
+                    <ul className="col-span-4 flex w-full flex-col gap-1">
+                        {getNavMenuItems(storeMenuItems)}
+                    </ul>
                 </MenuList>
             </Menu>
             <Menu allowHover open={isAboutDlpe} handler={setIsAboutDlpe}>
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-                            About DLPE{' '}
+                            About DLPE
                         </MenuItem>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="">
-                    <ul className="col-span-4 flex w-full flex-col gap-1">{renderItems}</ul>
+                    <ul className="col-span-4 flex w-full flex-col gap-1">
+                        {getNavMenuItems(aboutDlpeMenuItems)}
+                    </ul>
                 </MenuList>
             </Menu>
             <Menu allowHover open={isServiceCenter} handler={setIsServiceCenter}>
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-                            Service center{' '}
+                            Service center
                         </MenuItem>
                     </Typography>
                 </MenuHandler>
                 <MenuList className="">
-                    <ul className="col-span-4 flex w-full flex-col gap-1">{renderItems}</ul>
+                    <ul className="col-span-4 flex w-full flex-col gap-1">
+                        {getNavMenuItems(serviceCenterMenuItems)}
+                    </ul>
                 </MenuList>
             </Menu>
-
-            <MenuItem className="flex items-center gap-2 font-medium text-blue-gray-900 lg:hidden">
-                <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" /> Pages{' '}
-            </MenuItem>
-            <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">{renderItems}</ul>
         </>
     );
 }

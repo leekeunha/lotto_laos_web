@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 
-export interface FormRowVerticalProps {
+export type FormRowVerticalProps = {
     label?: string;
     error?: string;
     children: ReactNode;
-}
+};
 
-export interface NavItemProps {
+export type NavItemProps = {
     label: string;
     to: string;
-}
+};

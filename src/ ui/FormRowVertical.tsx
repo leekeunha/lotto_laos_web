@@ -1,4 +1,4 @@
-import { FormRowVerticalProps } from './interface';
+import { FormRowVerticalProps } from './types';
 
 export default function FormRowVertical({ label, error, children }: FormRowVerticalProps) {
     return (
