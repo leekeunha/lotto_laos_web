@@ -5,7 +5,7 @@ export default function Logout() {
     const { logout, isLoading } = useLogout();
 
     return (
-        <Button disabled={isLoading} onClick={logout}>
+        <Button color="blue" disabled={isLoading} onClick={logout}>
             {!isLoading ? 'LOGOUT' : <Spinner />}
         </Button>
     );

@@ -9,7 +9,7 @@ export default function HeaderMenu() {
             <Button size="sm" className="mr-2" onClick={() => navigate('/login')}>
                 LOGIN
             </Button>
-            <Button size="sm" onClick={() => navigate('/join')}>
+            <Button color="blue" size="sm" onClick={() => navigate('/join')}>
                 JOIN
             </Button>
         </div>

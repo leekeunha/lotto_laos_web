@@ -3,11 +3,15 @@ import { useForm } from 'react-hook-form';
 import useJoin from './useJoin';
 import { Card, Input, Checkbox, Button, Typography, Spinner } from '@material-tailwind/react';
 import { JoinParams } from '../types';
+import { useMoveBack } from '../../hooks/useMoveBack';
 
 export default function JoinForm() {
     const { join, isPending } = useJoin();
-    const { register, formState, getValues, handleSubmit, reset } = useForm<JoinParams>();
-    const { errors } = formState;
+    const { register, formState, getValues, handleSubmit, reset } = useForm<JoinParams>({
+        mode: 'onChange',
+    });
+    const { errors, isValid } = formState;
+    const moveBack = useMoveBack();
 
     const onSubmit = ({ email, password }: JoinParams) => {
         console.log('onSubmit');
@@ -35,7 +39,7 @@ export default function JoinForm() {
                     <Input
                         size="lg"
                         placeholder="name@mail.com"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                         type="email"
                         id="email"
                         disabled={isPending}
@@ -89,12 +93,23 @@ export default function JoinForm() {
                     />
                     <div className="flex justify-between">
                         <div>
-                            <Button type="submit" className="mt-6" disabled={isPending} fullWidth>
+                            <Button
+                                type="submit"
+                                className=""
+                                disabled={isPending}
+                                onClick={moveBack}
+                                fullWidth
+                            >
                                 {!isPending ? 'Back' : <Spinner />}
                             </Button>
                         </div>
                         <div>
-                            <Button type="submit" className="mt-6" disabled={isPending} fullWidth>
+                            <Button
+                                type="submit"
+                                className=""
+                                disabled={isPending || !isValid}
+                                fullWidth
+                            >
                                 {!isPending ? 'Registration completed' : <Spinner />}
                             </Button>
                         </div>

@@ -30,7 +30,7 @@ function LoginForm() {
                 Log in
             </Typography>
             <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={handleSubmit}>
-                <div className="mb-1 flex flex-col gap-6">
+                <div className="flex flex-col gap-2 mb-3">
                     <Input
                         size="lg"
                         placeholder="name@mail.com"
@@ -46,7 +46,7 @@ function LoginForm() {
                         type="password"
                         size="lg"
                         placeholder="********"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
                         labelProps={{
                             className: 'before:content-none after:content-none',
                         }}
@@ -54,8 +54,18 @@ function LoginForm() {
                         onChange={(e) => setPassword(e.target.value)}
                         disabled={isLoading}
                     />
-                    <Button className="mt-6" disabled={isLoading} fullWidth>
+                    {/* <div className="flex w-max gap-4"> */}
+                    <Checkbox label="remember" color="blue" defaultChecked />
+                    {/* </div> */}
+
+                    <Button color="blue" className="" disabled={isLoading} fullWidth>
                         {!isLoading ? 'Log in' : <Spinner />}
+                    </Button>
+                </div>
+                <div className="flex flex-col items-center">
+                    <div className="w-full border-t border-gray-300  mb-3"></div>
+                    <Button color="blue" variant="outlined" className="" fullWidth>
+                        JOIN
                     </Button>
                 </div>
             </form>
