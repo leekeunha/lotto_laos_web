@@ -108,9 +108,9 @@ const serviceCenterMenuItems = [
     },
 ];
 
-function getNavMenuItems(navListMenuItems) {
+function getNavMenuItems(navListMenuItems, disableFirstItem = false) {
     return navListMenuItems.map(({ url, label }, index) => {
-        if (index === 0) {
+        if (disableFirstItem && index === 0) {
             return (
                 <MenuItem key={label}>
                     <Typography
@@ -155,7 +155,7 @@ function NavListMenu() {
                 </MenuHandler>
                 <MenuList className="">
                     <ul className="col-span-4 flex w-full flex-col gap-1">
-                        {getNavMenuItems(lotteryMenuItems)}
+                        {getNavMenuItems(lotteryMenuItems, true)}
                     </ul>
                 </MenuList>
             </Menu>
@@ -169,7 +169,7 @@ function NavListMenu() {
                 </MenuHandler>
                 <MenuList className="">
                     <ul className="col-span-4 flex w-full flex-col gap-1">
-                        {getNavMenuItems(resultMenuItems)}
+                        {getNavMenuItems(resultMenuItems, true)}
                     </ul>
                 </MenuList>
             </Menu>
