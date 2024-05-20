@@ -1,9 +1,11 @@
-import create from 'zustand';
-import YoutubeClient from './api/youtubeClient';
-import xxxApiClient from './api/xxxApiClient';
+import { create } from 'zustand';
+import { UserService } from '../services/UserService';
+import UserClient from '../httpClient/UserClient';
 
-export default const useStore = create(set=>{
-    YoutubeClient: new YoutubeClient(),
-    xxxApiClient: new xxxApiClient(),
+export const useUserService = create(() => {
+    const client = new UserClient();
+    const userService = new UserService(client);
+    return {
+        userService,
+    };
 });
-

@@ -1,24 +1,37 @@
-import @/models/User;
+import UserClient from '../httpClient/UserClient';
+import User from '../models/User';
+import { UserApiResponse } from './types';
 
-class UserService{
+export class UserService {
+    private apiClient: UserClient;
 
-    private userClient: UserClient;
-    
-    constructor(){
-        this.userClient = new this.UserClient();
+    constructor(apiClient: UserClient) {
+        this.apiClient = apiClient;
     }
 
-    register(firstName:string, lastName: string, email: string):User
-    {
-        try{
-            await response = this.userClient.regiser(firstNam, lastName,email);
-        }catch(Exception error){
-            // do whatever you need
-            throw new error;
+    async join(email: string, password: string): Promise<User> {
+        try {
+            const response: UserApiResponse = await this.apiClient.join({
+                email,
+                password,
+            });
+            const user: User = new User(
+                response.data.user.id,
+                response.data.user.email ?? '',
+                response.data.user.firstName ?? '',
+                response.data.user.lastName ?? '',
+            );
+            return user;
+        } catch (error) {
+            throw new Error('');
         }
-        
-        user =  new User(response.data.user.id, response.data.user.firstName, response.data.user.lastName);
-        return user;
     }
 
+    async logout() {
+        try {
+            return this.apiClient.logout();
+        } catch (error) {
+            throw new Error('');
+        }
+    }
 }

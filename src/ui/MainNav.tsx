@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-    MobileNav,
+    Collapse,
     Typography,
     Menu,
     MenuHandler,
@@ -240,9 +240,9 @@ export default function MainNav() {
                     <NavList />
                 </div>
             </div>
-            <MobileNav open={isNavOpen} className="overflow-scroll">
+            <Collapse open={isNavOpen} className="overflow-scroll">
                 <NavList />
-            </MobileNav>
+            </Collapse>
         </nav>
     );
 }

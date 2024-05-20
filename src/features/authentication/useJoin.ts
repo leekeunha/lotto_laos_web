@@ -1,16 +1,22 @@
-import { join as joinApi } from '../../api/auth';
 import { useMutation } from '@tanstack/react-query';
-import React from 'react';
 import toast from 'react-hot-toast';
+import { useUserService } from '../../store/store';
+import { JoinParams } from '../types';
 
 export default function useJoin() {
-    const { mutate: join, isLoading } = useMutation({
-        mutationFn: joinApi,
+    const { userService } = useUserService();
+
+    const { mutate: join, isPending } = useMutation({
+        mutationFn: (data: JoinParams) => userService.join(data.email, data.password),
         onSuccess: (user) => {
             toast.success(
-                "Account successfully created! Please verufy the new account from the user's email address.",
+                "Account successfully created! Please verify the new account from the user's email address.",
             );
         },
+        onError: (error: Error) => {
+            toast.error(`Login failed: ${error.message}`);
+        },
     });
-    return { join, isLoading };
+
+    return { join, isPending };
 }

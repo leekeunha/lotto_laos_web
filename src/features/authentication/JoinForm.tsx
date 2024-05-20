@@ -2,15 +2,21 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useJoin from './useJoin';
 import { Card, Input, Checkbox, Button, Typography, Spinner } from '@material-tailwind/react';
+import { JoinParams } from '../types';
 
 export default function JoinForm() {
-    const { join, isLoading } = useJoin();
-    const { register, formState, getValues, handleSubmit, reset } = useForm();
+    const { join, isPending } = useJoin();
+    const { register, formState, getValues, handleSubmit, reset } = useForm<JoinParams>();
     const { errors } = formState;
 
-    const onSubmit = ({ email, password }) => {
+    const onSubmit = ({ email, password }: JoinParams) => {
         console.log('onSubmit');
-        join({ email, password }, { onSettled: () => reset() });
+        join(
+            { email, password },
+            {
+                onSettled: () => reset(),
+            },
+        );
     };
 
     return (
@@ -32,7 +38,7 @@ export default function JoinForm() {
                         className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                         type="email"
                         id="email"
-                        disabled={isLoading}
+                        disabled={isPending}
                         {...register('email', {
                             required: 'This field is required',
                             pattern: {
@@ -53,7 +59,7 @@ export default function JoinForm() {
                         }}
                         type="password"
                         id="password"
-                        disabled={isLoading}
+                        disabled={isPending}
                         {...register('password', {
                             required: 'This field is required',
                             minLength: {
@@ -74,7 +80,7 @@ export default function JoinForm() {
                         }}
                         type="password"
                         id="confirmPassword"
-                        disabled={isLoading}
+                        disabled={isPending}
                         {...register('confirmPassword', {
                             required: 'This field is required',
                             validate: (value) =>
@@ -83,13 +89,13 @@ export default function JoinForm() {
                     />
                     <div className="flex justify-between">
                         <div>
-                            <Button type="submit" className="mt-6" disabled={isLoading} fullWidth>
-                                {!isLoading ? 'Back' : <Spinner />}
+                            <Button type="submit" className="mt-6" disabled={isPending} fullWidth>
+                                {!isPending ? 'Back' : <Spinner />}
                             </Button>
                         </div>
                         <div>
-                            <Button type="submit" className="mt-6" disabled={isLoading} fullWidth>
-                                {!isLoading ? 'Registration completed' : <Spinner />}
+                            <Button type="submit" className="mt-6" disabled={isPending} fullWidth>
+                                {!isPending ? 'Registration completed' : <Spinner />}
                             </Button>
                         </div>
                     </div>
