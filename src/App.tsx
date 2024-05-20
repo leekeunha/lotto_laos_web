@@ -12,6 +12,9 @@ import AboutDlpe from './pages/AboutDlpe';
 import ServiceCenter from './pages/ServiceCenter';
 import Join from './pages/Join';
 import Home from './pages/Home';
+import TermsOfService from './pages/TermsOfService';
+import Notice from './pages/Notice';
+import Faq from './pages/Faq';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -45,6 +48,10 @@ function App() {
                         <Route path="service-center" element={<ServiceCenter />} />
                         <Route path="login" element={<Login />}></Route>
                         <Route path="join" element={<Join />} />
+                        <Route path="service-center/faq" element={<Faq />} />
+                        <Route path="service-center/notice" element={<Notice />} />
+                        <Route path="service-center/terms-of-service" element={<TermsOfService />} />
+                        
                     </Route>
 
                     <Route path="*" element={<PageNotFound />} />

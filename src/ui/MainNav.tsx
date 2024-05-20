@@ -95,15 +95,15 @@ const aboutDlpeMenuItems = [
 
 const serviceCenterMenuItems = [
     {
-        url: 'faq',
+        url: 'service-center/faq',
         label: 'Faq',
     },
     {
-        url: 'notice',
+        url: 'service-center/notice',
         label: 'Notice',
     },
     {
-        url: 'terms-of-service',
+        url: 'service-center/terms-of-service',
         label: 'Terms of Service',
     },
 ];
@@ -112,11 +112,11 @@ function getNavMenuItems(navListMenuItems, disableFirstItem = false) {
     return navListMenuItems.map(({ url, label }, index) => {
         if (disableFirstItem && index === 0) {
             return (
-                <MenuItem key={label}>
+                <MenuItem key={label} className="cursor-text">
                     <Typography
                         variant="small"
                         color="blue"
-                        className="font-normal cursor-not-allowed"
+                        className="font-normal"
                     >
                         {label}
                     </Typography>

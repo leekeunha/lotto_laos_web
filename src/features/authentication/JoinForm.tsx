@@ -4,6 +4,7 @@ import useJoin from './useJoin';
 import { Card, Input, Checkbox, Button, Typography, Spinner } from '@material-tailwind/react';
 import { JoinParams } from '../types';
 import { useMoveBack } from '../../hooks/useMoveBack';
+import { NavLink } from 'react-router-dom';
 
 export default function JoinForm() {
     const { join, isPending } = useJoin();
@@ -91,6 +92,19 @@ export default function JoinForm() {
                                 value === getValues().password || 'Passwords need to match',
                         })}
                     />
+                    <div className="flex justify-between items-center">
+                        <Checkbox
+                            labelProps={{ className: 'text-xs' }}
+                            label="(Required) Consent to Happy 5/45 Terms of Use"
+                        />
+                        <NavLink
+                            to="/service-center/terms-of-service"
+                            className="bg-teal-500 text-white border border-white p-1 rounded inline-block text-xs"
+                        >
+                            more
+                        </NavLink>
+                    </div>
+
                     <div className="flex justify-between">
                         <div>
                             <Button
