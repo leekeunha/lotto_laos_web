@@ -109,15 +109,30 @@ const serviceCenterMenuItems = [
 ];
 
 function getNavMenuItems(navListMenuItems) {
-    return navListMenuItems.map(({ url, label }) => (
-        <NavLink to={url} key={label}>
-            <MenuItem>
-                <Typography variant="small" color="gray" className="font-normal">
-                    {label}
-                </Typography>
-            </MenuItem>
-        </NavLink>
-    ));
+    return navListMenuItems.map(({ url, label }, index) => {
+        if (index === 0) {
+            return (
+                <MenuItem key={label}>
+                    <Typography
+                        variant="small"
+                        color="blue"
+                        className="font-normal cursor-not-allowed"
+                    >
+                        {label}
+                    </Typography>
+                </MenuItem>
+            );
+        }
+        return (
+            <NavLink to={url} key={label}>
+                <MenuItem>
+                    <Typography variant="small" color="gray" className="font-normal">
+                        {label}
+                    </Typography>
+                </MenuItem>
+            </NavLink>
+        );
+    });
 }
 
 function NavListMenu() {
