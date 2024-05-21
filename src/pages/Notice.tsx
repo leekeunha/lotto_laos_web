@@ -14,62 +14,37 @@ import {
     Input,
 } from '@material-tailwind/react';
 
-const TABLE_HEAD = ['Transaction', 'Amount', 'Date', 'Status', 'Account', ''];
+const TABLE_HEAD = ['No', 'Title', 'DATE'];
 
 const TABLE_ROWS = [
     {
-        img: 'https://docs.material-tailwind.com/img/logos/logo-spotify.svg',
-        name: 'Spotify',
-        amount: '$2,500',
-        date: 'Wed 3:00pm',
-        status: 'paid',
-        account: 'visa',
-        accountNumber: '1234',
-        expiry: '06/2026',
+        no: '1',
+        title: 'The 5/45 Lottery will be temporarily suspended from publication',
+        date: '08/11/2022',
     },
     {
-        img: 'https://docs.material-tailwind.com/img/logos/logo-amazon.svg',
-        name: 'Amazon',
-        amount: '$5,000',
-        date: 'Wed 1:00pm',
-        status: 'paid',
-        account: 'master-card',
-        accountNumber: '1234',
-        expiry: '06/2026',
+        no: '2',
+        title: 'Lottery 5/45 Jackpot is open. After opening, there is a 2nd lucky winner who won the 1st prize worth 1. Temporarily sold',
+        date: '04/11/2022',
     },
     {
-        img: 'https://docs.material-tailwind.com/img/logos/logo-pinterest.svg',
-        name: 'Pinterest',
-        amount: '$3,400',
-        date: 'Mon 7:40pm',
-        status: 'pending',
-        account: 'master-card',
-        accountNumber: '1234',
-        expiry: '06/2026',
+        no: '3',
+        title: 'Finally, the 5/45 lottery ticket, the jackpot is broken! The lucky ones will receive the 1st prize which is',
+        date: '04/11/2022',
     },
     {
-        img: 'https://docs.material-tailwind.com/img/logos/logo-google.svg',
-        name: 'Google',
-        amount: '$1,000',
-        date: 'Wed 5:00pm',
-        status: 'paid',
-        account: 'visa',
-        accountNumber: '1234',
-        expiry: '06/2026',
+        no: '4',
+        title: 'The second cumulative prize of the Happy 5/45 label is now worth up to: 1,339,024,750 kip',
+        date: '04/11/2022',
     },
     {
-        img: 'https://docs.material-tailwind.com/img/logos/logo-netflix.svg',
-        name: 'netflix',
-        amount: '$14,000',
-        date: 'Wed 3:30am',
-        status: 'cancelled',
-        account: 'visa',
-        accountNumber: '1234',
-        expiry: '06/2026',
+        no: '5',
+        title: '7 tips to get ready to get lucky on the day of the lottery',
+        date: '04/11/2022',
     },
 ];
 
-export default Notice = () => {
+export default function NosTable() {
     return (
         <>
             <div>
@@ -82,17 +57,17 @@ export default Notice = () => {
             </div>
             <Card className="h-full w-full">
                 <CardHeader floated={false} shadow={false} className="rounded-none">
-                    <div className="mb-4 flex flex-col gap-8 md:flex-row md:items-center justify-end">
-                        <div className="flex w-full shrink-0 gap-2 md:w-max">
-                            <div className="w-full md:w-72">
+                    <div className="mb-4 flex flex-col  gap-2 md:flex-row md:items-center justify-end">
+                        <div className="flex w-full shrink-0 gap-2 md:w-max mt-1">
+                            <div clas-sName="w-full md:w-72">
                                 <Input
                                     label="Search"
                                     icon={<MagnifyingGlassIcon className="h-5 w-5" />}
                                 />
                             </div>
                             {/* <Button className="flex items-center gap-3" size="sm">
-                            <ArrowDownTrayIcon strokeWidth={2} className="h-4 w-4" /> Download
-                        </Button> */}
+                                <ArrowDownTrayIcon strokeWidth={2} className="h-4 w-4" /> Download
+                            </Button> */}
                         </div>
                     </div>
                 </CardHeader>
@@ -117,123 +92,50 @@ export default Notice = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {TABLE_ROWS.map(
-                                (
-                                    {
-                                        img,
-                                        name,
-                                        amount,
-                                        date,
-                                        status,
-                                        account,
-                                        accountNumber,
-                                        expiry,
-                                    },
-                                    index,
-                                ) => {
-                                    const isLast = index === TABLE_ROWS.length - 1;
-                                    const classes = isLast
-                                        ? 'p-4'
-                                        : 'p-4 border-b border-blue-gray-50';
+                            {TABLE_ROWS.map(({ no, title, date }, index) => {
+                                const isLast = index === TABLE_ROWS.length - 1;
+                                const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50';
 
-                                    return (
-                                        <tr key={name}>
-                                            <td className={classes}>
-                                                <div className="flex items-center gap-3">
-                                                    <Avatar
+                                return (
+                                    <tr key={no}>
+                                        <td className={classes}>
+                                            <div className="flex items-center gap-3">
+                                                {/* <Avatar
                                                         src={img}
                                                         alt={name}
                                                         size="md"
                                                         className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
-                                                    />
-                                                    <Typography
-                                                        variant="small"
-                                                        color="blue-gray"
-                                                        className="font-bold"
-                                                    >
-                                                        {name}
-                                                    </Typography>
-                                                </div>
-                                            </td>
-                                            <td className={classes}>
+                                                    /> */}
                                                 <Typography
                                                     variant="small"
                                                     color="blue-gray"
-                                                    className="font-normal"
+                                                    className="font-bold"
                                                 >
-                                                    {amount}
+                                                    {no}
                                                 </Typography>
-                                            </td>
-                                            <td className={classes}>
-                                                <Typography
-                                                    variant="small"
-                                                    color="blue-gray"
-                                                    className="font-normal"
-                                                >
-                                                    {date}
-                                                </Typography>
-                                            </td>
-                                            <td className={classes}>
-                                                <div className="w-max">
-                                                    <Chip
-                                                        size="sm"
-                                                        variant="ghost"
-                                                        value={status}
-                                                        color={
-                                                            status === 'paid'
-                                                                ? 'green'
-                                                                : status === 'pending'
-                                                                  ? 'amber'
-                                                                  : 'red'
-                                                        }
-                                                    />
-                                                </div>
-                                            </td>
-                                            <td className={classes}>
-                                                <div className="flex items-center gap-3">
-                                                    <div className="h-9 w-12 rounded-md border border-blue-gray-50 p-1">
-                                                        <Avatar
-                                                            src={
-                                                                account === 'visa'
-                                                                    ? 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png'
-                                                                    : 'https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/mastercard.png'
-                                                            }
-                                                            size="sm"
-                                                            alt={account}
-                                                            variant="square"
-                                                            className="h-full w-full object-contain p-1"
-                                                        />
-                                                    </div>
-                                                    <div className="flex flex-col">
-                                                        <Typography
-                                                            variant="small"
-                                                            color="blue-gray"
-                                                            className="font-normal capitalize"
-                                                        >
-                                                            {account.split('-').join(' ')}{' '}
-                                                            {accountNumber}
-                                                        </Typography>
-                                                        <Typography
-                                                            variant="small"
-                                                            color="blue-gray"
-                                                            className="font-normal opacity-70"
-                                                        >
-                                                            {expiry}
-                                                        </Typography>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td className={classes}>
-                                                <Tooltip content="Edit User">
-                                                    <IconButton variant="text">
-                                                        <PencilIcon className="h-4 w-4" />
-                                                    </IconButton>
-                                                </Tooltip>
-                                            </td>
-                                        </tr>
-                                    );
-                                },
-                            )}
+                                            </div>
+                                        </td>
+                                        <td className={classes}>
+                                            <Typography
+                                                variant="small"
+                                                color="blue-gray"
+                                                className="font-normal"
+                                            >
+                                                {title}
+                                            </Typography>
+                                        </td>
+                                        <td className={classes}>
+                                            <Typography
+                                                variant="small"
+                                                color="blue-gray"
+                                                className="font-normal"
+                                            >
+                                                {date}
+                                            </Typography>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </CardBody>
@@ -271,7 +173,4 @@ export default Notice = () => {
             </Card>
         </>
     );
-};
-function Notice() {
-    throw new Error('Function not implemented.');
 }
