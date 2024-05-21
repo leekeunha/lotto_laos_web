@@ -1,6 +1,6 @@
 import UserClient from '../httpClient/UserClient';
 import User from '../models/User';
-import { UserApiResponse } from './types';
+import { LoginResponse, UserApiResponse } from './types';
 
 export class UserService {
     private apiClient: UserClient;
@@ -22,6 +22,19 @@ export class UserService {
                 response.data.user.lastName ?? '',
             );
             return user;
+        } catch (error) {
+            throw new Error('');
+        }
+    }
+
+    async login(email: string, password: string): Promise<string> {
+        try {
+            const response: LoginResponse = await this.apiClient.login({
+                email,
+                password,
+            });
+
+            return response.data.token;
         } catch (error) {
             throw new Error('');
         }

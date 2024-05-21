@@ -3,12 +3,20 @@ export default class User {
     private readonly _lastName?: string;
     private readonly _id: number;
     private readonly _email?: string;
+    private readonly _username?: string;
 
-    constructor(id: number, email?: string, firstName?: string, lastName?: string) {
+    constructor(
+        id: number,
+        email: string,
+        firstName?: string,
+        lastName?: string,
+        username?: string,
+    ) {
         this._id = id;
         this._email = email;
         this._firstName = firstName;
         this._lastName = lastName;
+        this._username = username;
     }
 
     get id() {
@@ -29,5 +37,8 @@ export default class User {
 
     get fullName() {
         return `${this._firstName} ${this._lastName}`;
+    }
+    get username() {
+        return this._username;
     }
 }

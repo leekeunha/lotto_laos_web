@@ -6,7 +6,7 @@ export default class UserClient {
 
     constructor() {
         this.httpClient = axios.create({
-            baseURL: USER_API_CLIENT_URL,
+            baseURL: 'https://reqres.in/api',
         });
     }
     // private api_url = constants.USER_API_CLIENT_URL;
@@ -15,6 +15,10 @@ export default class UserClient {
 
     async join(params) {
         return this.httpClient.post('join', params);
+    }
+
+    async login(params) {
+        return this.httpClient.post('login', params);
     }
 
     async logout() {

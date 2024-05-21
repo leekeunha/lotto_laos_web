@@ -20,7 +20,7 @@ import Join from './pages/Join.tsx';
 import RegisterEmail from './features/authentication/RegisterEmail.tsx';
 import RegisterMobile from './features/authentication/RegisterMobile.tsx';
 import Register from './features/authentication/Register.tsx';
-
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
@@ -68,6 +68,7 @@ function App() {
 
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
+                <ReactQueryDevtools initialIsOpen={true}></ReactQueryDevtools>
             </BrowserRouter>
         </QueryClientProvider>
     );

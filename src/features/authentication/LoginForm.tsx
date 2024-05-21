@@ -8,8 +8,11 @@ function LoginForm() {
     const [password, setPassword] = useState('');
     const { login, isLoading } = useLogin();
     const navigate = useNavigate();
+    console.log('LoginForm');
+
     function handleSubmit(e) {
         e.preventDefault();
+        console.log('handleSubmit');
 
         if (!email || !password) {
             return;
@@ -59,7 +62,7 @@ function LoginForm() {
                     <Checkbox label="remember" color="blue" defaultChecked />
                     {/* </div> */}
 
-                    <Button color="blue" className="" disabled={isLoading} fullWidth>
+                    <Button type="submit" color="blue" className="" disabled={isLoading} fullWidth>
                         {!isLoading ? 'Log in' : <Spinner />}
                     </Button>
                 </div>
