@@ -1,6 +1,6 @@
 import UserClient from '../httpClient/UserClient';
 import User from '../models/User';
-import { LoginResponse, UserApiResponse } from './types';
+import { UserApiResponse } from './types';
 
 export class UserService {
     private apiClient: UserClient;
