@@ -7,7 +7,6 @@ import {
     MenuList,
     MenuItem,
 } from '@material-tailwind/react';
-
 import { NavLink } from 'react-router-dom';
 
 const lotteryMenuItems = [
@@ -17,11 +16,11 @@ const lotteryMenuItems = [
     },
     {
         url: 'introduction',
-        label: 'introduction',
+        label: 'Introduction',
     },
     {
         url: 'how-to-play',
-        label: 'how-to-play',
+        label: 'How to Play',
     },
 ];
 
@@ -32,19 +31,19 @@ const resultMenuItems = [
     },
     {
         url: 'jackpot-numbers',
-        label: 'Jackpot numbers',
+        label: 'Jackpot Numbers',
     },
     {
         url: 'prize-payment',
-        label: 'Prize payment',
+        label: 'Prize Payment',
     },
     {
         url: 'draw-video',
-        label: 'Draw video',
+        label: 'Draw Video',
     },
     {
         url: 'winners-interview',
-        label: "Winner's interview ",
+        label: "Winner's Interview",
     },
     {
         url: 'unclaimed-winnings',
@@ -55,15 +54,15 @@ const resultMenuItems = [
 const giftGameMenuItems = [
     {
         url: 'happy-ball-5m',
-        label: 'Happy ball 5m',
+        label: 'Happy Ball 5m',
     },
     {
         url: 'happy-ball-3m',
-        label: 'happy-ball-3m',
+        label: 'Happy Ball 3m',
     },
     {
         url: 'gold-digger',
-        label: 'Gold-digger',
+        label: 'Gold Digger',
     },
     {
         url: 'gift-ranking',
@@ -77,7 +76,7 @@ const giftGameMenuItems = [
 
 const storeMenuItems = [
     {
-        url: 'seach-store',
+        url: 'search-store',
         label: 'Search Store',
     },
 ];
@@ -89,14 +88,14 @@ const aboutDlpeMenuItems = [
     },
     {
         url: 'about-dlpe/contact',
-        label: 'contact',
+        label: 'Contact',
     },
 ];
 
 const serviceCenterMenuItems = [
     {
         url: 'service-center/faq',
-        label: 'Faq',
+        label: 'FAQ',
     },
     {
         url: 'service-center/notice',
@@ -114,6 +113,15 @@ function getNavMenuItems(navListMenuItems, disableFirstItem = false) {
             return (
                 <MenuItem key={label} className="cursor-text">
                     <Typography variant="small" color="blue" className="font-normal">
+                        {label}
+                    </Typography>
+                </MenuItem>
+            );
+        }
+        if (label.toLowerCase() === 'contact') {
+            return (
+                <MenuItem key={label} onClick={() => window.open('mailto:support@dlpe.la')}>
+                    <Typography variant="small" color="gray" className="font-normal">
                         {label}
                     </Typography>
                 </MenuItem>
@@ -215,7 +223,7 @@ function NavListMenu() {
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-                            Service center
+                            Service Center
                         </MenuItem>
                     </Typography>
                 </MenuHandler>

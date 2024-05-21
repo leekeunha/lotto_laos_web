@@ -63,7 +63,7 @@ function App() {
 
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
-                <ReactQueryDevtools initialIsOpen={true}></ReactQueryDevtools>
+                <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools>
             </BrowserRouter>
         </QueryClientProvider>
     );
