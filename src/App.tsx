@@ -14,10 +14,22 @@ import TermsOfService from './pages/TermsOfService';
 import Notice from './pages/Notice';
 import Faq from './pages/Faq';
 import Join from './pages/Join.tsx';
-import Register from './features/authentication/Register.tsx';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import Introduction from './pages/Introduction.tsx';
-import Contact from './pages/Contact.tsx';
+import DlpeIntroduction from './pages/DlpeIntroduction.tsx';
+import SearchStore from './pages/SearchStore.tsx';
+import HappyBall5m from './pages/HappyBall5m.tsx';
+import HappyBall3m from './pages/HappyBall3m.tsx';
+import GoldDigger from './pages/GoldDigger.tsx';
+import ExchangeGift from './pages/ExchangeGift.tsx';
+import GiftRanking from './pages/GiftRanking.tsx';
+import JackpotNumbers from './pages/JackpotNumbers.tsx';
+import PrizePayment from './pages/PrizePayment.tsx';
+import DrawVideo from './pages/DrawVideo.tsx';
+import WinnersInterview from './pages/WinnersInterview.tsx';
+import UnclaimedWinnings from './pages/UnclaimedWinnings.tsx';
+import Happy545Introduction from './pages/Happy545Introduction.tsx';
+import HowToPlay from './pages/HowToPlay.tsx';
+
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
@@ -50,11 +62,25 @@ function App() {
                         <Route path="service-center" element={<ServiceCenter />} />
                         <Route path="login" element={<Login />}></Route>
                         <Route path="join" element={<Join />} />
-                        <Route path="register/:method" element={<Register />} />
                         <Route path="service-center/faq" element={<Faq />} />
                         <Route path="service-center/notice" element={<Notice />} />
-                        <Route path="about-dlpe/introduction" element={<Introduction />} />
-                        <Route path="about-dlpe/contact" element={<Contact />} />
+                        <Route path="about-dlpe/introduction" element={<DlpeIntroduction />} />
+                        <Route path="store/search-store" element={<SearchStore />} />
+                        <Route path="gift-game/happy-ball-5m" element={<HappyBall5m />} />
+                        <Route path="gift-game/happy-ball-3m" element={<HappyBall3m />} />
+                        <Route path="gift-game/gold-digger" element={<GoldDigger />} />
+                        <Route path="gift-game/gift-ranking" element={<GiftRanking />} />
+                        <Route path="gift-game/exchange-gift" element={<ExchangeGift />} />
+                        <Route path="result/jackpot-numbers" element={<JackpotNumbers />} />
+                        <Route path="result/prize-payment" element={<PrizePayment />} />
+                        <Route path="result/draw-video" element={<DrawVideo />} />
+                        <Route path="result/winners-interview" element={<WinnersInterview />} />
+                        <Route path="result/unclaimed-winnings" element={<UnclaimedWinnings />} />
+                        <Route
+                            path="lottery-information/introduction"
+                            element={<Happy545Introduction />}
+                        />
+                        <Route path="lottery-information/how-to-play" element={<HowToPlay />} />
                         <Route
                             path="service-center/terms-of-service"
                             element={<TermsOfService />}

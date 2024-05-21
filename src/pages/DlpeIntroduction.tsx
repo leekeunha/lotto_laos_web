@@ -1,6 +1,6 @@
 import { Typography } from '@material-tailwind/react';
 
-export default function Introduction() {
+export default function DlpeIntroduction() {
     return (
         <>
             <Typography variant="h3">Introduction</Typography>

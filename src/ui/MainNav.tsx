@@ -11,72 +11,72 @@ import { NavLink } from 'react-router-dom';
 
 const lotteryMenuItems = [
     {
-        url: 'happy545',
+        url: '',
         label: 'Happy5/45',
     },
     {
-        url: 'introduction',
+        url: 'lottery-information/introduction',
         label: 'Introduction',
     },
     {
-        url: 'how-to-play',
+        url: 'lottery-information/how-to-play',
         label: 'How to Play',
     },
 ];
 
 const resultMenuItems = [
     {
-        url: 'happy545',
+        url: '',
         label: 'Happy5/45',
     },
     {
-        url: 'jackpot-numbers',
+        url: 'result/jackpot-numbers',
         label: 'Jackpot Numbers',
     },
     {
-        url: 'prize-payment',
+        url: 'result/prize-payment',
         label: 'Prize Payment',
     },
     {
-        url: 'draw-video',
+        url: 'result/draw-video',
         label: 'Draw Video',
     },
     {
-        url: 'winners-interview',
+        url: 'result/winners-interview',
         label: "Winner's Interview",
     },
     {
-        url: 'unclaimed-winnings',
+        url: 'result/unclaimed-winnings',
         label: 'Unclaimed Winnings',
     },
 ];
 
 const giftGameMenuItems = [
     {
-        url: 'happy-ball-5m',
+        url: 'gift-game/happy-ball-5m',
         label: 'Happy Ball 5m',
     },
     {
-        url: 'happy-ball-3m',
+        url: 'gift-game/happy-ball-3m',
         label: 'Happy Ball 3m',
     },
     {
-        url: 'gold-digger',
+        url: 'gift-game/gold-digger',
         label: 'Gold Digger',
     },
     {
-        url: 'gift-ranking',
+        url: 'gift-game/gift-ranking',
         label: 'Gift Ranking',
     },
     {
-        url: 'exchange-gift',
+        url: 'gift-game/exchange-gift',
         label: 'Exchange Gift',
     },
 ];
 
 const storeMenuItems = [
     {
-        url: 'search-store',
+        url: 'store/search-store',
         label: 'Search Store',
     },
 ];
@@ -247,10 +247,6 @@ function NavList() {
 
 export default function MainNav() {
     const [isNavOpen, setIsNavOpen] = React.useState(false);
-
-    React.useEffect(() => {
-        window.addEventListener('resize', () => window.innerWidth >= 960 && setIsNavOpen(false));
-    }, []);
 
     return (
         <nav className="mx-auto max-w-screen-xl p-2 lg:pl-6">
