@@ -84,11 +84,11 @@ const storeMenuItems = [
 
 const aboutDlpeMenuItems = [
     {
-        url: 'introduction',
+        url: 'about-dlpe/introduction',
         label: 'Introduction',
     },
     {
-        url: 'Contact',
+        url: 'about-dlpe/contact',
         label: 'contact',
     },
 ];

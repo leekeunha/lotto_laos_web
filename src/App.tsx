@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import ProtectedRoute from './ui/ProtectedRoute';
 import PageNotFound from './pages/PageNotFound';
 import AppLayout from './ui/AppLayout';
 import Login from './pages/Login';
@@ -10,17 +9,15 @@ import GiftGame from './pages/GiftGame';
 import Store from './pages/Store';
 import AboutDlpe from './pages/AboutDlpe';
 import ServiceCenter from './pages/ServiceCenter';
-// import Join from './pages/Join';
 import Home from './pages/Home';
 import TermsOfService from './pages/TermsOfService';
 import Notice from './pages/Notice';
 import Faq from './pages/Faq';
-import RegisterMobileOrEmail from './features/authentication/RegisterMobileOrEmail.tsx';
 import Join from './pages/Join.tsx';
-import RegisterEmail from './features/authentication/RegisterEmail.tsx';
-import RegisterMobile from './features/authentication/RegisterMobile.tsx';
 import Register from './features/authentication/Register.tsx';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Introduction from './pages/Introduction.tsx';
+import Contact from './pages/Contact.tsx';
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
@@ -52,18 +49,16 @@ function App() {
                         <Route path="about-dlpe" element={<AboutDlpe />} />
                         <Route path="service-center" element={<ServiceCenter />} />
                         <Route path="login" element={<Login />}></Route>
-                        {/* <Route path="join" element={<Join />} /> */}
                         <Route path="join" element={<Join />} />
                         <Route path="register/:method" element={<Register />} />
-                        {/* <Route path="register-email" element={<RegisterEmail />} />
-                        <Route path="register-mobile" element={<RegisterMobile />} /> */}
                         <Route path="service-center/faq" element={<Faq />} />
                         <Route path="service-center/notice" element={<Notice />} />
+                        <Route path="about-dlpe/introduction" element={<Introduction />} />
+                        <Route path="about-dlpe/contact" element={<Contact />} />
                         <Route
                             path="service-center/terms-of-service"
                             element={<TermsOfService />}
                         />
-                        {/* <Route path="register-mobile-Email" element={<RegisterMobileOrEmail />} /> */}
                     </Route>
 
                     <Route path="*" element={<PageNotFound />} />
