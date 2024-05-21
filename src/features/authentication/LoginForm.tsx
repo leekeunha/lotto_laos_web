@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Card, Input, Checkbox, Button, Typography, Spinner } from '@material-tailwind/react';
 import { useLogin } from './useLogin';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { login, isLoading } = useLogin();
-
+    const navigate = useNavigate();
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -64,7 +65,13 @@ function LoginForm() {
                 </div>
                 <div className="flex flex-col items-center">
                     <div className="w-full border-t border-gray-300  mb-3"></div>
-                    <Button color="blue" variant="outlined" className="" fullWidth>
+                    <Button
+                        color="blue"
+                        variant="outlined"
+                        className=""
+                        fullWidth
+                        onClick={() => navigate('/join')}
+                    >
                         JOIN
                     </Button>
                 </div>

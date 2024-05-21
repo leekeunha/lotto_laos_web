@@ -1,4 +1,4 @@
-// TODO:삭제하기
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import useJoin from './useJoin';
 import { Card, Input, Checkbox, Button, Typography, Spinner } from '@material-tailwind/react';
@@ -6,7 +6,7 @@ import { JoinParams } from '../types';
 import { useMoveBack } from '../../hooks/useMoveBack';
 import { NavLink } from 'react-router-dom';
 
-export default function JoinForm() {
+export default function RegisterMobileForm() {
     const { join, isPending } = useJoin();
     const { register, formState, getValues, handleSubmit, reset } = useForm<JoinParams>({
         mode: 'onChange',
@@ -27,7 +27,7 @@ export default function JoinForm() {
     return (
         <Card className="flex flex-col items-center" color="transparent" shadow={false}>
             <Typography className="text-left" as="div" variant="h4" color="blue-gray">
-                Register with Email Address
+                Enter mobile phone number
             </Typography>
             <form
                 className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
@@ -35,23 +35,24 @@ export default function JoinForm() {
             >
                 <div className="mb-1 flex flex-col gap-6">
                     <Typography variant="h6" color="blue-gray" className="-mb-3">
-                        Enter Email address
+                        Enter mobile phone number
                     </Typography>
                     <Input
                         size="lg"
-                        placeholder="name@mail.com"
+                        placeholder="010-1234-5678"
                         className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-                        type="email"
-                        id="email"
+                        type="tel"
+                        id="mobile"
                         disabled={isPending}
-                        {...register('email', {
+                        {...register('mobile', {
                             required: 'This field is required',
                             pattern: {
-                                value: /\S+@\S+\.\S+/,
-                                message: 'Please provide a valid email address',
+                                value: /^01([0|1|6|7|8|9])-(\d{3,4})-(\d{4})$/,
+                                message: 'Please provide a valid mobile phone number',
                             },
                         })}
                     />
+
                     <Typography variant="h6" color="blue-gray" className="-mb-3">
                         password
                     </Typography>

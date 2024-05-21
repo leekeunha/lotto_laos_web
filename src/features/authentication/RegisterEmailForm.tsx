@@ -1,4 +1,3 @@
-// TODO:삭제하기
 import { useForm } from 'react-hook-form';
 import useJoin from './useJoin';
 import { Card, Input, Checkbox, Button, Typography, Spinner } from '@material-tailwind/react';
@@ -6,7 +5,7 @@ import { JoinParams } from '../types';
 import { useMoveBack } from '../../hooks/useMoveBack';
 import { NavLink } from 'react-router-dom';
 
-export default function JoinForm() {
+export default function RegisterEmailForm() {
     const { join, isPending } = useJoin();
     const { register, formState, getValues, handleSubmit, reset } = useForm<JoinParams>({
         mode: 'onChange',

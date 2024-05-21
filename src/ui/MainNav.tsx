@@ -113,11 +113,7 @@ function getNavMenuItems(navListMenuItems, disableFirstItem = false) {
         if (disableFirstItem && index === 0) {
             return (
                 <MenuItem key={label} className="cursor-text">
-                    <Typography
-                        variant="small"
-                        color="blue"
-                        className="font-normal"
-                    >
+                    <Typography variant="small" color="blue" className="font-normal">
                         {label}
                     </Typography>
                 </MenuItem>
