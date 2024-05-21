@@ -8,7 +8,7 @@ export default function RegisterMethodSelector() {
     return (
         <div className="grid grid-cols-2 gap-3">
             <NavLink
-                to={'/register/mobile'}
+                to={'/register-mobile'}
                 className="flex flex-col items-center justify-center border border-gray-300 h-36 w-36 p-5"
             >
                 <Typography className="mb-3" variant="small">
@@ -17,7 +17,7 @@ export default function RegisterMethodSelector() {
                 <FontAwesomeIcon icon={faMobileAlt} className="text-gray-500 mb-2" size="2x" />
             </NavLink>
             <NavLink
-                to={'/register/email'}
+                to={'/register-email'}
                 className="flex flex-col items-center justify-center border border-gray-300 h-36 w-36 p-5"
             >
                 <Typography className="mb-3" variant="small">

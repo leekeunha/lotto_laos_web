@@ -29,6 +29,8 @@ import WinnersInterview from './pages/WinnersInterview.tsx';
 import UnclaimedWinnings from './pages/UnclaimedWinnings.tsx';
 import Happy545Introduction from './pages/Happy545Introduction.tsx';
 import HowToPlay from './pages/HowToPlay.tsx';
+import RegisterEmail from './features/authentication/RegisterEmail.tsx';
+import RegisterMobile from './features/authentication/RegisterMobile.tsx';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -76,6 +78,10 @@ function App() {
                         <Route path="result/draw-video" element={<DrawVideo />} />
                         <Route path="result/winners-interview" element={<WinnersInterview />} />
                         <Route path="result/unclaimed-winnings" element={<UnclaimedWinnings />} />
+
+                        <Route path="register-email" element={<RegisterEmail />} />
+                        <Route path="register-mobile" element={<RegisterMobile />} />
+
                         <Route
                             path="lottery-information/introduction"
                             element={<Happy545Introduction />}
