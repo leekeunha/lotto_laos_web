@@ -9,7 +9,7 @@ import useNotice from '../features/serviceCenter/useNotice';
 export default function Notice() {
     // const { serviceCenterService } = useServiceCenterServiceStore();
     // const {} = useNotice();
-    const { notices, isLoading, count } = useNotice();
+    const { notices, isLoading, count, error } = useNotice();
 
     return (
         <>

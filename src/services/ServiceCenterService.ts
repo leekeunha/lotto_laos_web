@@ -1,6 +1,4 @@
 import ServiceCenterClient from '../httpClient/fakeServiceCenterClient';
-import User from '../models/User';
-import { UserApiResponse } from './types';
 
 export class ServiceCenterService {
     private apiClient: ServiceCenterClient;

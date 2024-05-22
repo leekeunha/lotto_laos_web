@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { USER_API_CLIENT_URL } from '../constants';
+// import { USER_API_CLIENT_URL } from '../constants';
 
 export default class UserClient {
     private httpClient;
