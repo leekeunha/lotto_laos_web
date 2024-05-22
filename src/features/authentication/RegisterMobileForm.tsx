@@ -8,11 +8,13 @@ import { NavLink } from 'react-router-dom';
 
 export default function RegisterMobileForm() {
     const { join, isPending } = useJoin();
-    const { register, formState, getValues, handleSubmit, reset } = useForm<JoinParams>({
+    const { register, formState, getValues, handleSubmit, reset, watch } = useForm<JoinParams>({
         mode: 'onChange',
     });
     const { errors, isValid } = formState;
     const moveBack = useMoveBack();
+
+    const termsChecked = watch('terms');
 
     const onSubmit = ({ email, password }: JoinParams) => {
         console.log('onSubmit');
@@ -38,9 +40,7 @@ export default function RegisterMobileForm() {
                         Enter mobile phone number
                     </Typography>
                     <Input
-                        size="lg"
-                        placeholder="010-1234-5678"
-                        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                        label="mobile phone number"
                         type="tel"
                         id="mobile"
                         disabled={isPending}
@@ -57,12 +57,7 @@ export default function RegisterMobileForm() {
                         password
                     </Typography>
                     <Input
-                        size="lg"
-                        placeholder="********"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                            className: 'before:content-none after:content-none',
-                        }}
+                        label="password"
                         type="password"
                         id="password"
                         disabled={isPending}
@@ -78,12 +73,7 @@ export default function RegisterMobileForm() {
                         Confirm Password
                     </Typography>
                     <Input
-                        size="lg"
-                        placeholder="********"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                            className: 'before:content-none after:content-none',
-                        }}
+                        label="confirm password"
                         type="password"
                         id="confirmPassword"
                         disabled={isPending}
@@ -97,6 +87,9 @@ export default function RegisterMobileForm() {
                         <Checkbox
                             labelProps={{ className: 'text-xs' }}
                             label="(Required) Consent to Happy 5/45 Terms of Use"
+                            {...register('terms', {
+                                required: 'You must accept the terms to proceed.',
+                            })}
                         />
                         <NavLink
                             to="/service-center/terms-of-service"
@@ -122,7 +115,7 @@ export default function RegisterMobileForm() {
                             <Button
                                 type="submit"
                                 className=""
-                                disabled={isPending || !isValid}
+                                disabled={isPending || !isValid || !termsChecked}
                                 fullWidth
                             >
                                 {!isPending ? 'Registration completed' : <Spinner />}

@@ -7,11 +7,13 @@ import { NavLink } from 'react-router-dom';
 
 export default function RegisterEmailForm() {
     const { join, isPending } = useJoin();
-    const { register, formState, getValues, handleSubmit, reset } = useForm<JoinParams>({
+    const { register, formState, getValues, handleSubmit, reset, watch } = useForm<JoinParams>({
         mode: 'onChange',
     });
     const { errors, isValid } = formState;
     const moveBack = useMoveBack();
+
+    const termsChecked = watch('terms');
 
     const onSubmit = ({ email, password }: JoinParams) => {
         console.log('onSubmit');
@@ -37,9 +39,7 @@ export default function RegisterEmailForm() {
                         Enter Email address
                     </Typography>
                     <Input
-                        size="lg"
-                        placeholder="name@mail.com"
-                        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                        label="email"
                         type="email"
                         id="email"
                         disabled={isPending}
@@ -55,12 +55,7 @@ export default function RegisterEmailForm() {
                         password
                     </Typography>
                     <Input
-                        size="lg"
-                        placeholder="********"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                            className: 'before:content-none after:content-none',
-                        }}
+                        label="password"
                         type="password"
                         id="password"
                         disabled={isPending}
@@ -76,12 +71,7 @@ export default function RegisterEmailForm() {
                         Confirm Password
                     </Typography>
                     <Input
-                        size="lg"
-                        placeholder="********"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                            className: 'before:content-none after:content-none',
-                        }}
+                        label="confirm password"
                         type="password"
                         id="confirmPassword"
                         disabled={isPending}
@@ -95,6 +85,9 @@ export default function RegisterEmailForm() {
                         <Checkbox
                             labelProps={{ className: 'text-xs' }}
                             label="(Required) Consent to Happy 5/45 Terms of Use"
+                            {...register('terms', {
+                                required: 'You must accept the terms to proceed.',
+                            })}
                         />
                         <NavLink
                             to="/service-center/terms-of-service"
@@ -120,7 +113,7 @@ export default function RegisterEmailForm() {
                             <Button
                                 type="submit"
                                 className=""
-                                disabled={isPending || !isValid}
+                                disabled={isPending || !isValid || !termsChecked}
                                 fullWidth
                             >
                                 {!isPending ? 'Registration completed' : <Spinner />}

@@ -35,24 +35,26 @@ function LoginForm() {
             <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-2 mb-3">
                     <Input
-                        size="lg"
-                        placeholder="name@mail.com"
-                        className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                            className: 'before:content-none after:content-none',
-                        }}
+                        label="email"
+                        // size="lg"
+                        // placeholder="name@mail.com"
+                        // className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+                        // labelProps={{
+                        //     className: 'before:content-none after:content-none',
+                        // }}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         disabled={isLoading}
                     />
                     <Input
-                        type="password"
-                        size="lg"
-                        placeholder="********"
-                        className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-                        labelProps={{
-                            className: 'before:content-none after:content-none',
-                        }}
+                        label="password"
+                        // type="password"
+                        // size="lg"
+                        // placeholder="********"
+                        // className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                        // labelProps={{
+                        //     className: 'before:content-none after:content-none',
+                        // }}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         disabled={isLoading}
