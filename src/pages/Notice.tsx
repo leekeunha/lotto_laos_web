@@ -1,18 +1,15 @@
-import { PencilIcon } from '@heroicons/react/24/solid';
-import { ArrowDownTrayIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import {
     Card,
     CardHeader,
     Typography,
     Button,
     CardBody,
-    Chip,
     CardFooter,
-    Avatar,
     IconButton,
-    Tooltip,
     Input,
 } from '@material-tailwind/react';
+import Search from '../ui/Search';
 
 const TABLE_HEAD = ['No', 'Title', 'DATE'];
 
@@ -51,25 +48,10 @@ export default function NosTable() {
                 <Typography variant="h5" color="blue-gray">
                     Notice
                 </Typography>
-                {/* <Typography color="gray" className="mt-1 font-normal">
-                    These are details about the last transactions
-                </Typography> */}
             </div>
             <Card className="h-full w-full">
                 <CardHeader floated={false} shadow={false} className="rounded-none">
-                    <div className="mb-4 flex flex-col  gap-2 md:flex-row md:items-center justify-end">
-                        <div className="flex w-full shrink-0 gap-2 md:w-max mt-1">
-                            <div className="w-full md:w-72">
-                                <Input
-                                    label="Search"
-                                    icon={<MagnifyingGlassIcon className="h-5 w-5" />}
-                                />
-                            </div>
-                            {/* <Button className="flex items-center gap-3" size="sm">
-                                <ArrowDownTrayIcon strokeWidth={2} className="h-4 w-4" /> Download
-                            </Button> */}
-                        </div>
-                    </div>
+                    <Search></Search>
                 </CardHeader>
                 <CardBody className="overflow-scroll px-0">
                     <table className="w-full min-w-max table-auto text-left">
