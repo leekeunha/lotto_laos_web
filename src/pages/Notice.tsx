@@ -1,34 +1,16 @@
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-import {
-    Card,
-    CardHeader,
-    Typography,
-    Button,
-    CardBody,
-    CardFooter,
-    IconButton,
-} from '@material-tailwind/react';
+import { Card, CardHeader, Typography, CardBody, CardFooter } from '@material-tailwind/react';
 import { useParams } from 'react-router-dom';
 import Search from '../ui/Search';
 import NoticeTable from '../features/serviceCenter/NoticeTable';
-import { useServiceCenterServiceStore } from '../store/serviceCenterStore';
-import { useQuery } from '@tanstack/react-query';
+
 import Pagination from '../ui/Pagination';
+import useNotice from '../features/serviceCenter/useNotice';
 
 export default function Notice() {
-    const { keyword } = useParams();
+    // const { serviceCenterService } = useServiceCenterServiceStore();
+    // const {} = useNotice();
+    const { notices, isLoading, count } = useNotice();
 
-    const { serviceCenterService } = useServiceCenterServiceStore();
-
-    const {
-        isLoading,
-        error,
-        data: notices,
-    } = useQuery({
-        queryKey: ['notice', keyword],
-        queryFn: () => serviceCenterService.search({ keyword }),
-        staleTime: 1000 * 60 * 1,
-    });
     return (
         <>
             {isLoading && <p>Loading...</p>}
