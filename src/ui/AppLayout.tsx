@@ -3,17 +3,15 @@ import Header from './Header';
 import Topbar from './Topbar';
 import Footer from './Footer';
 
-// import Sidebar from './Sidebar';
-
 function AppLayout() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Header />
-            <hr className="border-grey-400" />
+            <hr className="border-gray-400" />
             <Topbar />
             <hr className="border-blue-400" />
-            <main className="p-16 overflow-auto">
-                <div className="max-w-screen-2xl mx-auto flex flex-col gap-8">
+            <main className="p-4 overflow-auto">
+                <div className="flex flex-col gap-8 items-center">
                     <Outlet />
                 </div>
             </main>
