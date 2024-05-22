@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageSlider from '../ui/ImageSwiper';
+import ImageSlider from '../ui/ImageSlider';
 import YoutubeVideo from '../ui/YoutubeVideo';
 import AdditionalImages from '../ui/AdditionalImages';
 
