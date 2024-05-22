@@ -13,10 +13,13 @@ import Search from '../ui/Search';
 import NoticeTable from '../features/serviceCenter/NoticeTable';
 import { useServiceCenterServiceStore } from '../store/serviceCenterStore';
 import { useQuery } from '@tanstack/react-query';
+import Pagination from '../ui/Pagination';
 
 export default function Notice() {
     const { keyword } = useParams();
+
     const { serviceCenterService } = useServiceCenterServiceStore();
+
     const {
         isLoading,
         error,
@@ -43,39 +46,9 @@ export default function Notice() {
                     <NoticeTable notices={notices}></NoticeTable>
                 </CardBody>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Button variant="outlined" size="sm">
-                        Previous
-                    </Button>
-                    <div className="flex items-center gap-2">
-                        <IconButton variant="outlined" size="sm">
-                            1
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            2
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            3
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            ...
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            8
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            9
-                        </IconButton>
-                        <IconButton variant="text" size="sm">
-                            10
-                        </IconButton>
-                    </div>
-                    <Button variant="outlined" size="sm">
-                        Next
-                    </Button>
+                    <Pagination></Pagination>
                 </CardFooter>
             </Card>
         </>
     );
 }
-
-const TABLE_HEAD = ['No', 'Title', 'DATE'];
