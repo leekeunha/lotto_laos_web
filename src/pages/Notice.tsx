@@ -46,7 +46,7 @@ export default function Notice() {
                     <NoticeTable notices={notices}></NoticeTable>
                 </CardBody>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Pagination></Pagination>
+                    <Pagination count={11}></Pagination>
                 </CardFooter>
             </Card>
         </>

@@ -1,36 +1,63 @@
 import React from 'react';
 import { Typography, Button, IconButton } from '@material-tailwind/react';
+import { useSearchParams } from 'react-router-dom';
+import { PAGE_SIZE } from '../constants';
 
-export default function Pagination() {
+export default function Pagination({ count }) {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const currentPage = !searchParams.get('page') ? 1 : Number(searchParams.get('page'));
+
+    const pageCount = Math.ceil(count / PAGE_SIZE);
+
+    function nextPage() {
+        const next = currentPage === pageCount ? currentPage : currentPage + 1;
+
+        searchParams.set('page', next);
+        setSearchParams(searchParams);
+    }
+
+    function prevPage() {
+        const prev = currentPage === 1 ? currentPage : currentPage - 1;
+
+        searchParams.set('page', prev);
+        setSearchParams(searchParams);
+    }
+
+    function goToPage(page) {
+        searchParams.set('page', page);
+        setSearchParams(searchParams);
+    }
+
+    if (pageCount <= 1) return null;
+
+    const pages = [];
+    for (let i = 1; i <= pageCount; i++) {
+        pages.push(i);
+    }
+
     return (
         <>
-            <Button variant="outlined" size="sm">
+            <Button variant="outlined" size="sm" onClick={prevPage} disabled={currentPage === 1}>
                 Previous
             </Button>
             <div className="flex items-center gap-2">
-                <IconButton variant="outlined" size="sm">
-                    1
-                </IconButton>
-                <IconButton variant="text" size="sm">
-                    2
-                </IconButton>
-                <IconButton variant="text" size="sm">
-                    3
-                </IconButton>
-                <IconButton variant="text" size="sm">
-                    ...
-                </IconButton>
-                <IconButton variant="text" size="sm">
-                    8
-                </IconButton>
-                <IconButton variant="text" size="sm">
-                    9
-                </IconButton>
-                <IconButton variant="text" size="sm">
-                    10
-                </IconButton>
+                {pages.map((page) => (
+                    <IconButton
+                        key={page}
+                        variant={page === currentPage ? 'outlined' : 'text'}
+                        size="sm"
+                        onClick={() => goToPage(page)}
+                    >
+                        {page}
+                    </IconButton>
+                ))}
             </div>
-            <Button variant="outlined" size="sm">
+            <Button
+                variant="outlined"
+                size="sm"
+                onClick={nextPage}
+                disabled={currentPage === pageCount}
+            >
                 Next
             </Button>
         </>

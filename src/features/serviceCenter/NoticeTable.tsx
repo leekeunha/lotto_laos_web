@@ -1,13 +1,4 @@
-import {
-    Typography,
-    Button,
-    CardBody,
-    CardFooter,
-    IconButton,
-    Input,
-} from '@material-tailwind/react';
-import { useQuery } from '@tanstack/react-query';
-import { useServiceCenterServiceStore } from '../../store/serviceCenterStore';
+import { Typography } from '@material-tailwind/react';
 import { TABLE_HEAD } from '../../constants';
 
 export default function NoticeTable({ notices }) {
