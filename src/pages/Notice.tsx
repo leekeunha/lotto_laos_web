@@ -1,5 +1,5 @@
 import { Card, CardHeader, Typography, CardBody, CardFooter } from '@material-tailwind/react';
-import { useParams } from 'react-router-dom';
+
 import Search from '../ui/Search';
 import NoticeTable from '../features/serviceCenter/NoticeTable';
 
@@ -24,11 +24,11 @@ export default function Notice() {
                 <CardHeader floated={false} shadow={false} className="rounded-none">
                     <Search></Search>
                 </CardHeader>
-                <CardBody className="overflow-scroll px-0">
+                <CardBody className="px-0">
                     <NoticeTable notices={notices}></NoticeTable>
                 </CardBody>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Pagination count={11}></Pagination>
+                    <Pagination count={count}></Pagination>
                 </CardFooter>
             </Card>
         </>

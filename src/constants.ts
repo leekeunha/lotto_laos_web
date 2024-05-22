@@ -4,4 +4,5 @@ export const USER_API_CLIENT_URL = import.meta.env.VITE_USER_API_CLIENT_URL;
 export const MOBILE = 'mobile';
 export const EMAIL = 'email';
 export const TABLE_HEAD = ['No', 'Title', 'DATE'];
+export const SEARCH_STORE_TABLE_HEAD = ['Distributer', 'Tel', 'Location', 'Map'];
 export const PAGE_SIZE = 10;

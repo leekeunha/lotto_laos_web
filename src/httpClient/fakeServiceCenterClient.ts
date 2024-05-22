@@ -1,11 +1,14 @@
 import axios from 'axios';
 
 export default class FakeServiceCenterClient {
-    async search({ keyword }) {
+    async search({ keyword, page }) {
         try {
+            console.log('FakeServiceCenterClient keyword', keyword);
+            console.log('FakeServiceCenterClient page', page);
             const response = await axios.get('/notice/search.json', {
                 params: {
                     q: keyword,
+                    page,
                 },
             });
             console.log('Response data:', response.data); // 응답 데이터를 로그로 출력

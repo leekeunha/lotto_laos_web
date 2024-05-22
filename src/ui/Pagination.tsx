@@ -28,7 +28,7 @@ export default function Pagination({ count }) {
         setSearchParams(searchParams);
     }
 
-    if (pageCount <= 1) return null;
+    // if (pageCount <= 1) return null;
 
     const pages = [];
     for (let i = 1; i <= pageCount; i++) {

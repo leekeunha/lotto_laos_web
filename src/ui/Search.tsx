@@ -8,8 +8,8 @@ export default function Search() {
     const navigate = useNavigate();
     const [text, setText] = useState('');
     const handleSubmit = (e) => {
-        console.log('handleSubmit');
-        console.log('text: ', text);
+        // console.log('handleSubmit');
+        // console.log('text: ', text);
         e.preventDefault();
         navigate(`/service-center/notice/${text}`);
     };

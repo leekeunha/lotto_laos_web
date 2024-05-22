@@ -7,17 +7,14 @@ export class ServiceCenterService {
         this.apiClient = apiClient;
     }
 
-    async search({ keyword }) {
-        return this.apiClient
-            .search({
-                params: {
-                    q: keyword,
-                },
-            })
-            .then((res) => {
-                // console.log('res.items', res.items);
-                return res.items;
-            });
+    async search({ keyword, page }) {
+        console.log('ServiceCenterService keyword:', keyword);
+        console.log('ServiceCenterService page:', page);
+
+        return this.apiClient.search({ keyword, page }).then((res) => {
+            console.log('res', res);
+            return res;
+        });
     }
 
     // async join(email: string, password: string): Promise<User> {

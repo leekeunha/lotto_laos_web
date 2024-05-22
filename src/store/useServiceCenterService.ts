@@ -1,4 +1,4 @@
-import { ServiceCenterService } from './../services/ServiceCenterService';
+import { ServiceCenterService } from '../services/ServiceCenterService';
 import { create } from 'zustand';
 // import ServiceCenterClient from '../httpClient/fakeServiceCenterClient';
 import FakeServiceCenterClient from '../httpClient/fakeServiceCenterClient';
