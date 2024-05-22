@@ -6,11 +6,13 @@ import NoticeTable from '../features/serviceCenter/NoticeTable';
 import Pagination from '../ui/Pagination';
 import useNotice from '../features/serviceCenter/useNotice';
 import SearchStoreTable from '../features/store/SearchStoreTable';
+import useSearchStore from '../features/store/useSearchStore';
 
 export default function SearchStore() {
     // const { serviceCenterService } = useServiceCenterServiceStore();
     // const {} = useNotice();
-    const { notices, isLoading, count, error } = useNotice();
+    // const { notices, isLoading, count, error } = useNotice();
+    const { notices, isLoading, count, error } = useSearchStore();
 
     return (
         <>

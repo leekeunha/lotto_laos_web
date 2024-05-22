@@ -4,7 +4,7 @@ import { useServiceCenterService } from '../../store/useSearchStoreService';
 import { PAGE_SIZE } from '../../constants';
 import { NoticeResponse } from '../types';
 
-export default function useNotice() {
+export default function useSearchStore() {
     const { keyword } = useParams();
 
     const { serviceCenterService } = useServiceCenterService();
