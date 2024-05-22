@@ -47,7 +47,7 @@ const TABLE_ROWS = [
 export default function NosTable() {
     return (
         <>
-            <div>
+            <div className="w-full">
                 <Typography variant="h5" color="blue-gray">
                     Notice
                 </Typography>

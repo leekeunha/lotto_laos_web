@@ -3,8 +3,10 @@ import { Typography } from '@material-tailwind/react';
 export default function DlpeIntroduction() {
     return (
         <>
-            <Typography variant="h3">Introduction</Typography>
             <main className="flex flex-col justify-center items-center">
+                <Typography variant="h3" className="w-2/3">
+                    Introduction
+                </Typography>
                 <img
                     src="/introduction_dlpe.png"
                     alt="introduction_dlpe"
