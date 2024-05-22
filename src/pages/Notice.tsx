@@ -9,41 +9,34 @@ import {
     IconButton,
     Input,
 } from '@material-tailwind/react';
+import { useParams } from 'react-router-dom';
+
+import { useQuery } from '@tanstack/react-query';
+import { useServiceCenterServiceStore } from '../store/serviceCenterStore';
 import Search from '../ui/Search';
+import { useEffect } from 'react';
 
-const TABLE_HEAD = ['No', 'Title', 'DATE'];
+export default function Notice() {
+    const { keyword } = useParams();
+    const { serviceCenterService } = useServiceCenterServiceStore();
 
-const TABLE_ROWS = [
-    {
-        no: '1',
-        title: 'The 5/45 Lottery will be temporarily suspended from publication',
-        date: '08/11/2022',
-    },
-    {
-        no: '2',
-        title: 'Lottery 5/45 Jackpot is open. After opening, there is a 2nd lucky winner who won the 1st prize worth 1. Temporarily sold',
-        date: '04/11/2022',
-    },
-    {
-        no: '3',
-        title: 'Finally, the 5/45 lottery ticket, the jackpot is broken! The lucky ones will receive the 1st prize which is',
-        date: '04/11/2022',
-    },
-    {
-        no: '4',
-        title: 'The second cumulative prize of the Happy 5/45 label is now worth up to: 1,339,024,750 kip',
-        date: '04/11/2022',
-    },
-    {
-        no: '5',
-        title: '7 tips to get ready to get lucky on the day of the lottery',
-        date: '04/11/2022',
-    },
-];
+    // // serviceCenterService.search 함수가 올바르게 작동하는지 확인
+    // serviceCenterService.search({ keyword }).then((data) => console.log('Search data:', data));
 
-export default function NosTable() {
+    const {
+        isLoading,
+        error,
+        data: notices,
+    } = useQuery({
+        queryKey: ['notice', keyword],
+        queryFn: () => serviceCenterService.search({ keyword }),
+        staleTime: 1000 * 60 * 1,
+    });
+
     return (
         <>
+            {isLoading && <p>Loading...</p>}
+            {error && <p>Something is wrong 😖</p>}
             <div className="w-full">
                 <Typography variant="h5" color="blue-gray">
                     Notice
@@ -74,50 +67,47 @@ export default function NosTable() {
                             </tr>
                         </thead>
                         <tbody>
-                            {TABLE_ROWS.map(({ no, title, date }, index) => {
-                                const isLast = index === TABLE_ROWS.length - 1;
-                                const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50';
+                            {notices &&
+                                notices.map(({ no, title, date }, index) => {
+                                    const isLast = index === notices.length - 1;
+                                    const classes = isLast
+                                        ? 'p-4'
+                                        : 'p-4 border-b border-blue-gray-50';
 
-                                return (
-                                    <tr key={no}>
-                                        <td className={classes}>
-                                            <div className="flex items-center gap-3">
-                                                {/* <Avatar
-                                                        src={img}
-                                                        alt={name}
-                                                        size="md"
-                                                        className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
-                                                    /> */}
+                                    return (
+                                        <tr key={no}>
+                                            <td className={classes}>
+                                                <div className="flex items-center gap-3">
+                                                    <Typography
+                                                        variant="small"
+                                                        color="blue-gray"
+                                                        className="font-bold"
+                                                    >
+                                                        {no}
+                                                    </Typography>
+                                                </div>
+                                            </td>
+                                            <td className={classes}>
                                                 <Typography
                                                     variant="small"
                                                     color="blue-gray"
-                                                    className="font-bold"
+                                                    className="font-normal"
                                                 >
-                                                    {no}
+                                                    {title}
                                                 </Typography>
-                                            </div>
-                                        </td>
-                                        <td className={classes}>
-                                            <Typography
-                                                variant="small"
-                                                color="blue-gray"
-                                                className="font-normal"
-                                            >
-                                                {title}
-                                            </Typography>
-                                        </td>
-                                        <td className={classes}>
-                                            <Typography
-                                                variant="small"
-                                                color="blue-gray"
-                                                className="font-normal"
-                                            >
-                                                {date}
-                                            </Typography>
-                                        </td>
-                                    </tr>
-                                );
-                            })}
+                                            </td>
+                                            <td className={classes}>
+                                                <Typography
+                                                    variant="small"
+                                                    color="blue-gray"
+                                                    className="font-normal"
+                                                >
+                                                    {date}
+                                                </Typography>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
                         </tbody>
                     </table>
                 </CardBody>
@@ -156,3 +146,5 @@ export default function NosTable() {
         </>
     );
 }
+
+const TABLE_HEAD = ['No', 'Title', 'DATE'];

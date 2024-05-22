@@ -1,10 +1,10 @@
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
-import { useUserService } from '../../store/store';
+import { useUserServiceStore } from '../../store/userServiceStore';
 import { JoinParams } from '../types';
 
 export default function useJoin() {
-    const { userService } = useUserService();
+    const { userService } = useUserServiceStore();
 
     const { mutate: join, isPending } = useMutation({
         mutationFn: (data: JoinParams) => userService.join(data.email, data.password),

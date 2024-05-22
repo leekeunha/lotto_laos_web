@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useUserService } from '../../store/store';
+import { useUserServiceStore } from '../../store/userServiceStore';
 
 export const useLogout = () => {
-    const { userService } = useUserService();
+    const { userService } = useUserServiceStore();
     const navigate = useNavigate();
     const queryClient = useQueryClient();
 

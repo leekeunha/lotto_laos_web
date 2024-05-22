@@ -66,6 +66,7 @@ function App() {
                         <Route path="join" element={<Join />} />
                         <Route path="service-center/faq" element={<Faq />} />
                         <Route path="service-center/notice" element={<Notice />} />
+                        <Route path="service-center/notice/:keyword" element={<Notice />} />
                         <Route path="about-dlpe/introduction" element={<DlpeIntroduction />} />
                         <Route path="store/search-store" element={<SearchStore />} />
                         <Route path="gift-game/happy-ball-5m" element={<HappyBall5m />} />
@@ -78,10 +79,8 @@ function App() {
                         <Route path="result/draw-video" element={<DrawVideo />} />
                         <Route path="result/winners-interview" element={<WinnersInterview />} />
                         <Route path="result/unclaimed-winnings" element={<UnclaimedWinnings />} />
-
                         <Route path="register-email" element={<RegisterEmail />} />
                         <Route path="register-mobile" element={<RegisterMobile />} />
-
                         <Route
                             path="lottery-information/introduction"
                             element={<Happy545Introduction />}
@@ -92,7 +91,6 @@ function App() {
                             element={<TermsOfService />}
                         />
                     </Route>
-
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools>

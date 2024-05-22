@@ -1,12 +1,12 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import { useUserService } from '../../store/store';
+import { useUserServiceStore } from '../../store/userServiceStore';
 import { LoginParams } from '../types';
 import toast from 'react-hot-toast';
 import { LoginResponse } from '../../services/types';
 
 export function useLogin() {
-    const { userService } = useUserService();
+    const { userService } = useUserServiceStore();
     const navigate = useNavigate();
     const queryClient = useQueryClient();
 
