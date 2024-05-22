@@ -10,23 +10,9 @@ import { useQuery } from '@tanstack/react-query';
 import { useServiceCenterServiceStore } from '../../store/serviceCenterStore';
 import { TABLE_HEAD } from '../../constants';
 
-export default function NoticeTable({ keyword }) {
-    const { serviceCenterService } = useServiceCenterServiceStore();
-    const {
-        isLoading,
-        error,
-        data: notices,
-    } = useQuery({
-        queryKey: ['notice', keyword],
-        queryFn: () => serviceCenterService.search({ keyword }),
-        staleTime: 1000 * 60 * 1,
-    });
-
+export default function NoticeTable({ notices }) {
     return (
         <>
-            {isLoading && <p>Loading...</p>}
-            {error && <p>Something is wrong 😖</p>}
-
             <table className="w-full min-w-max table-auto text-left">
                 <thead>
                     <tr>

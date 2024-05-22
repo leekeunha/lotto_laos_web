@@ -7,21 +7,29 @@ import {
     CardBody,
     CardFooter,
     IconButton,
-    Input,
 } from '@material-tailwind/react';
 import { useParams } from 'react-router-dom';
-
-import { useQuery } from '@tanstack/react-query';
-import { useServiceCenterServiceStore } from '../store/serviceCenterStore';
 import Search from '../ui/Search';
-import { useEffect } from 'react';
 import NoticeTable from '../features/serviceCenter/NoticeTable';
+import { useServiceCenterServiceStore } from '../store/serviceCenterStore';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Notice() {
     const { keyword } = useParams();
-
+    const { serviceCenterService } = useServiceCenterServiceStore();
+    const {
+        isLoading,
+        error,
+        data: notices,
+    } = useQuery({
+        queryKey: ['notice', keyword],
+        queryFn: () => serviceCenterService.search({ keyword }),
+        staleTime: 1000 * 60 * 1,
+    });
     return (
         <>
+            {isLoading && <p>Loading...</p>}
+            {error && <p>Something is wrong 😖</p>}
             <div className="w-full">
                 <Typography variant="h5" color="blue-gray">
                     Notice
@@ -32,7 +40,7 @@ export default function Notice() {
                     <Search></Search>
                 </CardHeader>
                 <CardBody className="overflow-scroll px-0">
-                    <NoticeTable keyword={keyword}></NoticeTable>
+                    <NoticeTable notices={notices}></NoticeTable>
                 </CardBody>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Button variant="outlined" size="sm">
