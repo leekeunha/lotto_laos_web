@@ -18,7 +18,7 @@ export default function Happy545Introduction() {
                         alt="Online lottery"
                         className="mr-4 w-20"
                     />
-                    <Typography variant="body2" color="blue-gray" className="text-sm">
+                    <Typography color="blue-gray" className="text-sm">
                         Online lottery in which lottery tickets are issued and sold through a
                         terminal connected to a central computer center network.
                     </Typography>
@@ -29,7 +29,7 @@ export default function Happy545Introduction() {
                         alt="Automatic methods"
                         className="mr-4 w-20"
                     />
-                    <Typography variant="body2" color="blue-gray" className="text-sm">
+                    <Typography color="blue-gray" className="text-sm">
                         Automatic, semi-automatic and manual methods allow customers to choose and
                         purchase. Five out of 45 are randomly assigned.
                     </Typography>
@@ -40,7 +40,7 @@ export default function Happy545Introduction() {
                         alt="Lottery fund"
                         className="mr-4 w-20"
                     />
-                    <Typography variant="body2" color="blue-gray" className="text-sm">
+                    <Typography color="blue-gray" className="text-sm">
                         The lottery fund and the 1st prize will be determined according to the sales
                         volume.
                     </Typography>
@@ -51,11 +51,11 @@ export default function Happy545Introduction() {
                 <Typography variant="h5" color="blue-gray" className="mb-4">
                     Prize structure
                 </Typography>
-                <Typography variant="body2" color="blue-gray" className="text-sm mb-4">
+                <Typography color="blue-gray" className="text-sm mb-4">
                     1. Includes 4 prize classes and draws 01 times in each drawing period to choose
                     a winning number consisting of 5 numbers from numbers 01 to 45.
                 </Typography>
-                <Typography variant="body2" color="blue-gray" className="text-sm mb-4">
+                <Typography color="blue-gray" className="text-sm mb-4">
                     2. The specific award structure:
                 </Typography>
 
@@ -94,19 +94,19 @@ export default function Happy545Introduction() {
                 </table>
 
                 <div className="text-gray-700 text-sm mt-4">
-                    <Typography variant="body2" color="blue-gray" className="text-sm">
+                    <Typography color="blue-gray" className="text-sm">
                         - <span className="text-red-600">O</span> are the numbers that coincide with
                         the lottery results, not in order
                     </Typography>
-                    <Typography variant="body2" color="blue-gray" className="text-sm">
+                    <Typography color="blue-gray" className="text-sm">
                         - If there is no 1st prize winner, the winnings will be carried over to the
                         next round.
                     </Typography>
-                    <Typography variant="body2" color="blue-gray" className="text-sm">
+                    <Typography color="blue-gray" className="text-sm">
                         - In case the ticket of the winner wins many prize classes, the winner can
                         only receive the highest prize class.
                     </Typography>
-                    <Typography variant="body2" color="blue-gray" className="text-sm">
+                    <Typography color="blue-gray" className="text-sm">
                         - In case there are many winners of the first Prize, the first Prize will be
                         divided equally according to the proportion of the value of the winner's
                         participation.

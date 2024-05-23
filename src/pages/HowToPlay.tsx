@@ -19,7 +19,7 @@ export default function HowToPlay() {
                         <Typography variant="h6" color="blue">
                             1. Visit the Happy 5/45 store.
                         </Typography>
-                        <Typography variant="body2" color="blue-gray" className="text-sm">
+                        <Typography color="blue-gray" className="text-sm">
                             - You can buy tickets at the point of sale with more than 1000 stores
                             nationwide.
                             <br />
@@ -43,7 +43,7 @@ export default function HowToPlay() {
                         <Typography variant="h6" color="blue">
                             2. Select number
                         </Typography>
-                        <Typography variant="body2" color="blue-gray" className="text-sm">
+                        <Typography color="blue-gray" className="text-sm">
                             - 5 games can be selected by one ship sheet. (5,000 kip per game)
                             <br />- You can ask the seller to proceed with automatic selection.
                         </Typography>
@@ -67,7 +67,7 @@ export default function HowToPlay() {
                         <Typography variant="h6" color="blue">
                             3. Number selection method
                         </Typography>
-                        <Typography variant="body2" color="blue-gray" className="text-sm">
+                        <Typography color="blue-gray" className="text-sm">
                             ① Manual selection: Select all 5 number out of 45 numbers manually.
                             <br />
                             ② Automatic selection: Automatically select 5 random numbers by marking
@@ -93,7 +93,7 @@ export default function HowToPlay() {
                         <Typography variant="h6" color="blue">
                             4. Purchase
                         </Typography>
-                        <Typography variant="body2" color="blue-gray" className="text-sm">
+                        <Typography color="blue-gray" className="text-sm">
                             Submit a slip sheet with your number to the seller and pay cash to
                             purchase a ticket.
                             <br />
@@ -119,7 +119,7 @@ export default function HowToPlay() {
                         <Typography variant="h6" color="blue">
                             5. Confirm the purchase ticket
                         </Typography>
-                        <Typography variant="body2" color="blue-gray" className="text-sm">
+                        <Typography color="blue-gray" className="text-sm">
                             Be sure to check that the number on the purchased ticket matches the
                             number you have chosen.
                             <br />
@@ -145,7 +145,7 @@ export default function HowToPlay() {
                         <Typography variant="h6" color="blue">
                             6. Confirmation of winning
                         </Typography>
-                        <Typography variant="body2" color="blue-gray" className="text-sm">
+                        <Typography color="blue-gray" className="text-sm">
                             The winning number can be checked by watching the live lottery broadcast
                             or through the website and SNS after the lottery is finished.
                             <br />
