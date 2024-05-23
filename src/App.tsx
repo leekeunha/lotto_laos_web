@@ -31,6 +31,7 @@ import Happy545Introduction from './pages/Happy545Introduction.tsx';
 import HowToPlay from './pages/HowToPlay.tsx';
 import RegisterEmail from './features/authentication/RegisterEmail.tsx';
 import RegisterMobile from './features/authentication/RegisterMobile.tsx';
+import { Toaster } from 'react-hot-toast';
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -44,6 +45,7 @@ const queryClient = new QueryClient({
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
+            <Toaster />
             <BrowserRouter>
                 <Routes>
                     <Route

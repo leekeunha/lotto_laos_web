@@ -1,7 +1,7 @@
 import { Typography } from '@material-tailwind/react';
 import { SEARCH_STORE_TABLE_HEAD } from '../../constants';
 
-export default function SearchStoreTable({ notices }) {
+export default function SearchStoreTable({ stores }) {
     return (
         <>
             <table className="w-full min-w-max table-auto text-left">
@@ -24,21 +24,21 @@ export default function SearchStoreTable({ notices }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {notices &&
-                        notices.map(({ no, title, date }, index) => {
-                            const isLast = index === notices.length - 1;
+                    {stores &&
+                        stores.map(({ distributer, tel, location, map }, index) => {
+                            const isLast = index === stores.length - 1;
                             const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50';
 
                             return (
-                                <tr key={no}>
+                                <tr key={index}>
                                     <td className={classes}>
                                         <div className="flex items-center gap-3">
                                             <Typography
                                                 variant="small"
                                                 color="blue-gray"
-                                                className="font-bold"
+                                                className="font-normal"
                                             >
-                                                {no}
+                                                {distributer}
                                             </Typography>
                                         </div>
                                     </td>
@@ -48,7 +48,7 @@ export default function SearchStoreTable({ notices }) {
                                             color="blue-gray"
                                             className="font-normal"
                                         >
-                                            {title}
+                                            {tel}
                                         </Typography>
                                     </td>
                                     <td className={classes}>
@@ -57,7 +57,16 @@ export default function SearchStoreTable({ notices }) {
                                             color="blue-gray"
                                             className="font-normal"
                                         >
-                                            {date}
+                                            {location}
+                                        </Typography>
+                                    </td>
+                                    <td className={classes}>
+                                        <Typography
+                                            variant="small"
+                                            color="blue-gray"
+                                            className="font-normal"
+                                        >
+                                            {map}
                                         </Typography>
                                     </td>
                                 </tr>

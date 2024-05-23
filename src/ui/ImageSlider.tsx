@@ -5,7 +5,12 @@ export default function ImageSlider({ images }) {
         <div className="w-full h-70">
             <Carousel className="rounded-xl">
                 {images.map((src, index) => (
-                    <img src={src} alt={`Slide ${index}`} className="w-full h-full object-cover" />
+                    <img
+                        key={index}
+                        src={src}
+                        alt={`Slide ${index}`}
+                        className="w-full h-full object-cover"
+                    />
                 ))}
             </Carousel>
         </div>

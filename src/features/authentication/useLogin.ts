@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useUserServiceStore } from '../../store/userServiceStore';
 import { LoginParams } from '../types';
 import toast from 'react-hot-toast';
-import { LoginResponse } from '../../services/types';
 
 export function useLogin() {
     const { userService } = useUserServiceStore();
@@ -13,8 +12,6 @@ export function useLogin() {
     const { mutate: login, isLoading } = useMutation({
         mutationFn: (data: LoginParams) => userService.login(data.email, data.password),
         onSuccess: (token: string) => {
-            // console.log('token', token);
-
             queryClient.setQueryData(['token'], token);
             console.log(queryClient.getQueriesData(['token']));
             navigate('/', { replace: true });

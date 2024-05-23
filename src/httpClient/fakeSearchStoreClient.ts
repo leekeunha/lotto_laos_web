@@ -3,8 +3,8 @@ import axios from 'axios';
 export default class FakeSearchStoreClient {
     async search({ keyword, page }) {
         try {
-            console.log('FakeServiceCenterClient keyword', keyword);
-            console.log('FakeServiceCenterClient page', page);
+            console.log('FakeSearchStoreClient keyword', keyword);
+            console.log('FakeSearchStoreClient page', page);
             const response = await axios.get('/store/searchStore.json', {
                 params: {
                     q: keyword,

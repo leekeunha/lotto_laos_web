@@ -12,7 +12,7 @@ export default function SearchStore() {
     // const { serviceCenterService } = useServiceCenterServiceStore();
     // const {} = useNotice();
     // const { notices, isLoading, count, error } = useNotice();
-    const { notices, isLoading, count, error } = useSearchStore();
+    const { stores, isLoading, count, error } = useSearchStore();
 
     return (
         <>
@@ -28,7 +28,7 @@ export default function SearchStore() {
                     <Search></Search>
                 </CardHeader>
                 <CardBody className="px-0">
-                    <SearchStoreTable notices={notices}></SearchStoreTable>
+                    <SearchStoreTable stores={stores}></SearchStoreTable>
                 </CardBody>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Pagination count={count}></Pagination>

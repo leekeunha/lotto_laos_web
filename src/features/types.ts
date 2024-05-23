@@ -26,3 +26,18 @@ export interface NoticeResponse {
     pageInfo: PageInfo;
     nextPageToken?: string;
 }
+
+export interface SearchStoreResponse {
+    kind: string;
+    etag: string;
+    items: SearchStore[];
+    pageInfo: PageInfo;
+    nextPageToken?: string;
+}
+
+export interface SearchStore {
+    distributor: string;
+    tel: string;
+    location: string;
+    map: string;
+}

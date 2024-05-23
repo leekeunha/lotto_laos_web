@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-export default class FakeServiceCenterClient {
+export default class FakeNoticeClient {
     async search({ keyword, page }) {
         try {
-            console.log('FakeServiceCenterClient keyword', keyword);
-            console.log('FakeServiceCenterClient page', page);
+            console.log('FakeNoticeClient keyword', keyword);
+            console.log('FakeNoticeClient page', page);
             const response = await axios.get('/notice/search.json', {
                 params: {
                     q: keyword,

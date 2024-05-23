@@ -1,9 +1,9 @@
-import ServiceCenterClient from '../httpClient/fakeServiceCenterClient';
+import NoticeClient from '../httpClient/FakeNoticeClient';
 
-export class ServiceCenterService {
-    private apiClient: ServiceCenterClient;
+export class NoticeService {
+    private apiClient: NoticeClient;
 
-    constructor(apiClient: ServiceCenterClient) {
+    constructor(apiClient: NoticeClient) {
         this.apiClient = apiClient;
     }
 
