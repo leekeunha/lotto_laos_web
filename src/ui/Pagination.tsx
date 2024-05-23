@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Button, IconButton } from '@material-tailwind/react';
 import { useSearchParams } from 'react-router-dom';
-import { PAGE_SIZE } from '../constants';
+import { PAGE_SIZE } from '../utils/constants';
 
 export default function Pagination({ count }) {
     const [searchParams, setSearchParams] = useSearchParams();

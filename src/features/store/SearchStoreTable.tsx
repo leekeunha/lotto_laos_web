@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import {
-    Typography,
-    Button,
-    IconButton,
-    Dialog,
-    DialogBody,
-    DialogFooter,
-} from '@material-tailwind/react';
+import { Typography, IconButton } from '@material-tailwind/react';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
-import { GOOGLE_MAPS_API_KEY, SEARCH_STORE_TABLE_HEAD } from '../../constants';
-import Map from '../../ui/Map';
+import { LoadScript } from '@react-google-maps/api';
+import { GOOGLE_MAPS_API_KEY, SEARCH_STORE_TABLE_HEAD } from '../../utils/constants';
+
+import StoreDialog from './SearchStoreDialog';
 
 const defaultCenter = {
-    lat: 37.7749,
-    lng: -122.4194,
+    lat: 0,
+    lng: 0,
 };
 
 export default function SearchStoreTable({ stores }) {
@@ -22,7 +16,6 @@ export default function SearchStoreTable({ stores }) {
     const [selectedDistributor, setSelectedDistributor] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [mapCenter, setMapCenter] = useState(defaultCenter);
-
     useEffect(() => {
         if (selectedLocation) {
             fetch(
@@ -54,7 +47,7 @@ export default function SearchStoreTable({ stores }) {
     };
 
     return (
-        <LoadScript googleMapsApiKey="AIzaSyAcP2PHO1tdFQ4LfL99B92C7q7KCE6GA_s">
+        <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
             <table className="w-full min-w-max table-auto text-left">
                 <thead>
                     <tr>
@@ -75,77 +68,55 @@ export default function SearchStoreTable({ stores }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {stores &&
-                        stores.map(({ distributer, tel, location }, index) => {
-                            const isLast = index === stores.length - 1;
-                            const classes = isLast ? 'p-4' : 'p-4 border-b border-blue-gray-50';
-
-                            return (
-                                <tr key={index}>
-                                    <td className={classes}>
-                                        <div className="flex items-center gap-3">
-                                            <Typography
-                                                variant="small"
-                                                color="blue-gray"
-                                                className="font-normal"
-                                            >
-                                                {distributer}
-                                            </Typography>
-                                        </div>
-                                    </td>
-                                    <td className={classes}>
-                                        <Typography
-                                            variant="small"
-                                            color="blue-gray"
-                                            className="font-normal"
-                                        >
-                                            {tel}
-                                        </Typography>
-                                    </td>
-                                    <td className={classes}>
-                                        <Typography
-                                            variant="small"
-                                            color="blue-gray"
-                                            className="font-normal"
-                                        >
-                                            {location}
-                                        </Typography>
-                                    </td>
-                                    <td className={classes}>
-                                        <IconButton
-                                            variant="outlined"
-                                            color="blue-gray"
-                                            onClick={() => handleOpen(location, distributer)}
-                                        >
-                                            <LocationOnIcon className="h-5 w-5" />
-                                        </IconButton>
-                                    </td>
-                                </tr>
-                            );
-                        })}
+                    {stores.map(({ distributer, tel, location }, index) => (
+                        <tr key={index}>
+                            <td className="p-4 border-b border-blue-gray-50">
+                                <Typography
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                >
+                                    {distributer}
+                                </Typography>
+                            </td>
+                            <td className="p-4 border-b border-blue-gray-50">
+                                <Typography
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                >
+                                    {tel}
+                                </Typography>
+                            </td>
+                            <td className="p-4 border-b border-blue-gray-50">
+                                <Typography
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal"
+                                >
+                                    {location}
+                                </Typography>
+                            </td>
+                            <td className="p-4 border-b border-blue-gray-50">
+                                <IconButton
+                                    variant="outlined"
+                                    color="blue-gray"
+                                    onClick={() => handleOpen(location, distributer)}
+                                >
+                                    <LocationOnIcon className="h-5 w-5" />
+                                </IconButton>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
-
-            <Dialog open={open} handler={handleClose} size="sm">
-                <DialogBody className="flex flex-col items-center justify-center text-center">
-                    {selectedLocation && <Map center={mapCenter} />}
-                    {selectedDistributor && (
-                        <Typography variant="paragraph" color="blue-gray" className="mt-4">
-                            Distributer: {selectedDistributor}
-                        </Typography>
-                    )}
-                    {selectedLocation && (
-                        <Typography variant="paragraph" color="blue-gray">
-                            Location: {selectedLocation}
-                        </Typography>
-                    )}
-                </DialogBody>
-                <DialogFooter>
-                    <Button color="red" onClick={handleClose}>
-                        Close
-                    </Button>
-                </DialogFooter>
-            </Dialog>
+            <StoreDialog
+                open={open}
+                handleClose={handleClose}
+                center={mapCenter}
+                distributor={selectedDistributor}
+                location={selectedLocation}
+            />
         </LoadScript>
     );
 }

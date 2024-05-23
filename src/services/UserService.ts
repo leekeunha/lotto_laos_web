@@ -1,12 +1,11 @@
-
-import UserClient from '../httpClient/userClient';
+import FakeUserClient from '../httpClient/FakeUserClient';
 import User from '../models/User';
 import { UserApiResponse } from './types';
 
 export class UserService {
-    private apiClient: UserClient;
+    private apiClient: FakeUserClient;
 
-    constructor(apiClient: UserClient) {
+    constructor(apiClient: FakeUserClient) {
         this.apiClient = apiClient;
     }
 

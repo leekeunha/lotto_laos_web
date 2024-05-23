@@ -1,5 +1,5 @@
 import { Typography } from '@material-tailwind/react';
-import { TABLE_HEAD } from '../../constants';
+import { TABLE_HEAD } from '../../utils/constants';
 
 export default function NoticeTable({ notices }) {
     return (

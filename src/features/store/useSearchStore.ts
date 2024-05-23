@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useSearchStoreService } from '../../store/useSearchStoreService';
-import { PAGE_SIZE } from '../../constants';
+import { PAGE_SIZE } from '../../utils/constants';
 import { SearchStoreResponse } from '../types';
 
 export default function useSearchStore() {

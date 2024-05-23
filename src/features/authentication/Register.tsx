@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import Logo from '../../ui/Logo';
 import RegisterEmailForm from './RegisterEmailForm';
 import RegisterMobileForm from './RegisterMobileForm';
-import { EMAIL, MOBILE } from '../../constants';
+import { EMAIL, MOBILE } from '../../utils/constants';
 
 export default function Register() {
     const { method: selectedMethod } = useParams();

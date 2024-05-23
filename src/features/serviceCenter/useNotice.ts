@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams, useSearchParams } from 'react-router-dom';
 
-import { PAGE_SIZE } from '../../constants';
+import { PAGE_SIZE } from '../../utils/constants';
 import { NoticeResponse } from '../types';
 import { useServiceCenterService } from '../../store/useServiceCenterService copy';
 
