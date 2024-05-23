@@ -5,34 +5,13 @@ import { LoadScript } from '@react-google-maps/api';
 import { GOOGLE_MAPS_API_KEY, SEARCH_STORE_TABLE_HEAD } from '../../utils/constants';
 
 import StoreDialog from './SearchStoreDialog';
-
-const defaultCenter = {
-    lat: 0,
-    lng: 0,
-};
+import useGeocode from '../../hooks/useGeoCode';
 
 export default function SearchStoreTable({ stores }) {
     const [open, setOpen] = useState(false);
     const [selectedDistributor, setSelectedDistributor] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
-    const [mapCenter, setMapCenter] = useState(defaultCenter);
-    useEffect(() => {
-        if (selectedLocation) {
-            fetch(
-                `https://maps.googleapis.com/maps/api/geocode/json?address=${selectedLocation}&key=${GOOGLE_MAPS_API_KEY}`,
-            )
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.results.length > 0) {
-                        const { lat, lng } = data.results[0].geometry.location;
-                        setMapCenter({ lat, lng });
-                    }
-                })
-                .catch((error) => {
-                    console.error('Error fetching geocode data:', error);
-                });
-        }
-    }, [selectedLocation]);
+    const mapCenter = useGeocode(selectedLocation, GOOGLE_MAPS_API_KEY);
 
     const handleOpen = (location, distributor) => {
         setSelectedLocation(location);

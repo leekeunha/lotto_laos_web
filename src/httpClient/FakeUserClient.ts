@@ -10,9 +10,6 @@ export default class FakeUserClient {
             baseURL: USER_API_CLIENT_URL,
         });
     }
-    // private api_url = constants.USER_API_CLIENT_URL;
-
-    // private api_url = process.env.USER_API_CLIENT_URL;
 
     async join(params) {
         return this.httpClient.post('join', params);

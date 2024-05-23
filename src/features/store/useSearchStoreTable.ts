@@ -4,7 +4,7 @@ import { useSearchStoreService } from '../../store/useSearchStoreService';
 import { PAGE_SIZE } from '../../utils/constants';
 import { SearchStoreResponse } from '../types';
 
-export default function useSearchStore() {
+export default function useSearchStoreTable() {
     const { keyword } = useParams();
 
     const { searchStoreService } = useSearchStoreService();
