@@ -36,33 +36,17 @@ function LoginForm() {
                 <div className="flex flex-col gap-2 mb-3">
                     <Input
                         label="email"
-                        // size="lg"
-                        // placeholder="name@mail.com"
-                        // className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                        // labelProps={{
-                        //     className: 'before:content-none after:content-none',
-                        // }}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         disabled={isLoading}
                     />
                     <Input
                         label="password"
-                        // type="password"
-                        // size="lg"
-                        // placeholder="********"
-                        // className="!border-t-blue-gray-200 focus:!border-t-gray-900"
-                        // labelProps={{
-                        //     className: 'before:content-none after:content-none',
-                        // }}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         disabled={isLoading}
                     />
-                    {/* <div className="flex w-max gap-4"> */}
                     <Checkbox label="remember" color="blue" defaultChecked />
-                    {/* </div> */}
-
                     <Button type="submit" color="blue" className="" disabled={isLoading} fullWidth>
                         {!isLoading ? 'Log in' : <Spinner />}
                     </Button>

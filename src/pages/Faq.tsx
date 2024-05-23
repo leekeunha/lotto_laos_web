@@ -21,7 +21,7 @@ export default function Faq() {
                     Faq
                 </Typography>
             </div>
-            <Card className="h-full w-full">
+            <Card className="h-full w-full p-5">
                 <CardHeader floated={false} shadow={false} className="rounded-none">
                     <Search></Search>
                 </CardHeader>
