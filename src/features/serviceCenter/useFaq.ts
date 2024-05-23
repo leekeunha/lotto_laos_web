@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams, useSearchParams } from 'react-router-dom';
 
 import { PAGE_SIZE } from '../../constants';
-import { FaqResponse, NoticeResponse } from '../types';
+import { FaqResponse } from '../types';
 import { useFaqService } from '../../store/useFaqService';
 // import { useServiceCenterService } from '../../store/useServiceCenterService copy';
 
@@ -14,6 +14,7 @@ export default function useFaq() {
     const [searchParams] = useSearchParams();
     const page = !searchParams.get('page') ? 1 : Number(searchParams.get('page'));
 
+    console.log('faqService :', faqService);
     console.log('useNotice page:', page);
     const {
         isLoading,

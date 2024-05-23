@@ -10,7 +10,7 @@ import useFaq from '../features/serviceCenter/useFaq';
 
 export default function Faq() {
     // const { data, isLoading, count, error } = useNotice();
-    const { data, isLoading, count, error } = useFaq();
+    const { faqs, isLoading, count, error } = useFaq();
 
     return (
         <>
@@ -26,7 +26,7 @@ export default function Faq() {
                     <Search></Search>
                 </CardHeader>
                 <CardBody className="px-0">
-                    <FaqAccodians items={data}></FaqAccodians>
+                    <FaqAccodians items={faqs}></FaqAccodians>
                     {/* <NoticeTable notices={notices}></NoticeTable> */}
                 </CardBody>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">

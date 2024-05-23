@@ -5,8 +5,10 @@ import { FaqService } from '../services/FaqService';
 
 export const useFaqService = create(() => {
     const client = new FakeFaqClient();
-    const searchStoreService = new FaqService(client);
+
+    const faqService = new FaqService(client);
+    console.log('FaqService', faqService);
     return {
-        searchStoreService,
+        faqService,
     };
 });
