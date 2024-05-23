@@ -58,7 +58,7 @@ function App() {
                     >
                         <Route index element={<Navigate replace to="home" />}></Route>
                         <Route path="home" element={<Home />}></Route>
-                        <Route path="lottery-information" element={<LotteryInformation />}></Route>
+                        {/* <Route path="lottery-information" element={<LotteryInformation />}></Route> */}
                         <Route path="result" element={<Result />} />
                         <Route path="gift-game" element={<GiftGame />} />
                         <Route path="store" element={<Store />} />
