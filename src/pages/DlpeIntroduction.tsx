@@ -8,7 +8,7 @@ export default function DlpeIntroduction() {
                     Introduction
                 </Typography>
                 <img
-                    src="/introduction_dlpe.png"
+                    src="/images/introduction_dlpe.png"
                     alt="introduction_dlpe"
                     className="my-10 mx-auto"
                 />

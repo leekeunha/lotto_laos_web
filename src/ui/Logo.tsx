@@ -1,3 +1,3 @@
 export default function Logo({ className }) {
-    return <img className={className} src="/logo.png" alt="Logo" />;
+    return <img className={className} src="/images/logo.png" alt="Logo" />;
 }

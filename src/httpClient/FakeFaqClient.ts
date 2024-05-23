@@ -5,7 +5,7 @@ export default class FakeFaqClient {
         try {
             console.log('FakeFaqClient keyword', keyword);
             console.log('FakeFaqClient page', page);
-            const response = await axios.get('/faq/search.json', {
+            const response = await axios.get('/data/faq/search.json', {
                 params: {
                     q: keyword,
                     page,

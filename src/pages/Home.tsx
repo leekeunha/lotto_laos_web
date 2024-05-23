@@ -4,11 +4,11 @@ import YoutubeVideo from '../ui/YoutubeVideo';
 import AdditionalImages from '../ui/AdditionalImages';
 
 const imgSliderSrc = [
-    '/happy545_swiper.png',
-    '/1250000000_red_swiper.png',
-    '/1250000000_swiper.png',
+    '/images/happy545_swiper.png',
+    '/images/1250000000_red_swiper.png',
+    '/images/1250000000_swiper.png',
 ];
-const imgSrc = ['/randing_how.png', '/randing_contact.png'];
+const imgSrc = ['/images/randing_how.png', '/images/randing_contact.png'];
 
 const Home = () => {
     return (

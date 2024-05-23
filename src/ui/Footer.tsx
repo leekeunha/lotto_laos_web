@@ -19,7 +19,7 @@ export default function Footer() {
                         DLPE Company Limited, All rights reserved
                     </Typography>
                 </div>
-                <img className="h-12" src="/logo.png" alt="Logo" />
+                <img className="h-12" src="/images/logo.png" alt="Logo" />
             </div>
         </footer>
     );

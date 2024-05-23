@@ -5,7 +5,7 @@ export default class FakeNoticeClient {
         try {
             console.log('FakeNoticeClient keyword', keyword);
             console.log('FakeNoticeClient page', page);
-            const response = await axios.get('/notice/search.json', {
+            const response = await axios.get('/data/notice/search.json', {
                 params: {
                     q: keyword,
                     page,

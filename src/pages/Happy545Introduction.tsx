@@ -14,7 +14,7 @@ export default function Happy545Introduction() {
                 </Typography>
                 <div className="flex items-start mb-5">
                     <img
-                        src="/lotteryInformation/computer.png"
+                        src="/images/lotteryInformation/computer.png"
                         alt="Online lottery"
                         className="mr-4 w-20"
                     />
@@ -25,7 +25,7 @@ export default function Happy545Introduction() {
                 </div>
                 <div className="flex items-start mb-5">
                     <img
-                        src="/lotteryInformation/window.png"
+                        src="/images/lotteryInformation/window.png"
                         alt="Automatic methods"
                         className="mr-4 w-20"
                     />
@@ -36,7 +36,7 @@ export default function Happy545Introduction() {
                 </div>
                 <div className="flex items-start mb-12">
                     <img
-                        src="/lotteryInformation/window.png"
+                        src="/images/lotteryInformation/window.png"
                         alt="Lottery fund"
                         className="mr-4 w-20"
                     />
