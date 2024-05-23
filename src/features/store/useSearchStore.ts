@@ -1,24 +1,23 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { useServiceCenterService } from '../../store/useSearchStoreService';
+import { useSearchStoreService } from '../../store/useSearchStoreService';
 import { PAGE_SIZE } from '../../constants';
 import { NoticeResponse } from '../types';
 
 export default function useSearchStore() {
     const { keyword } = useParams();
 
-    const { serviceCenterService } = useServiceCenterService();
+    const { searchStoreService } = useSearchStoreService();
     const queryClient = useQueryClient();
     const [searchParams] = useSearchParams();
     const page = !searchParams.get('page') ? 1 : Number(searchParams.get('page'));
 
-    console.log('useNotice page:', page);
     const {
         isLoading,
         error,
         data: noticesResponse,
     } = useQuery<NoticeResponse>({
-        queryFn: () => serviceCenterService.search({ keyword, page }),
+        queryFn: () => searchStoreService.search({ keyword, page }),
         queryKey: ['notice', keyword, page],
     });
     console.log('noticesResponse', noticesResponse);

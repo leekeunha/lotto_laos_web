@@ -1,8 +1,9 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams, useSearchParams } from 'react-router-dom';
-import { useServiceCenterService } from '../../store/useSearchStoreService';
+
 import { PAGE_SIZE } from '../../constants';
 import { NoticeResponse } from '../types';
+import { useServiceCenterService } from '../../store/useServiceCenterService copy';
 
 export default function useNotice() {
     const { keyword } = useParams();
