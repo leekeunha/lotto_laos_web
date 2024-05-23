@@ -14,8 +14,7 @@ export default class FakeFaqClient {
             console.log('Response data:', response.data); // 응답 데이터를 로그로 출력
             return response.data; // 응답 데이터를 반환
         } catch (error) {
-            console.error('Error fetching data:', error);
-            throw error; // 오류 발생 시 예외를 던집니다.
+            throw error;
         }
     }
 }

@@ -22,12 +22,9 @@ export default function useNotice() {
         queryFn: () => serviceCenterService.search({ keyword, page }),
         queryKey: ['notice', keyword, page],
     });
-    console.log('noticesResponse', noticesResponse);
+
     const notices = noticesResponse?.items || [];
     const count = noticesResponse?.pageInfo.totalResults || 0;
-
-    console.log('notices:', notices);
-    console.log('count:', count);
 
     //PRE FETCH
     const pageCount = Math.ceil(count / PAGE_SIZE);

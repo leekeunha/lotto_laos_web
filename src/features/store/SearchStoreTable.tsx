@@ -17,8 +17,8 @@ const containerStyle = {
 };
 
 const defaultCenter = {
-    lat: 37.7749, // 예시로 샌프란시스코의 위도 경도를 사용
-    lng: -122.4194,
+    lat: 0,
+    lng: 0,
 };
 
 function Map({ center }) {
