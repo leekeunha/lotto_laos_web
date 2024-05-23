@@ -3,8 +3,8 @@ import { Typography } from '@material-tailwind/react';
 
 export default function TermsOfService() {
     return (
-        <div className="w-full p-6 font-sans">
-            <Typography variant="h4" color="blue-gray" className="text-left mb-6">
+        <div className="w-full p-6">
+            <Typography variant="h5" color="blue-gray" className="text-left mb-6">
                 Terms of Service
             </Typography>
             <Typography color="blue-gray" className="text-sm mt-2">
@@ -13,7 +13,7 @@ export default function TermsOfService() {
                 the DPLE company; the rights, obligations, and responsibilities of the purchaser;
                 and any other relevant matters.
             </Typography>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 1: Purpose
             </Typography>
             <Typography color="blue-gray" className="text-sm">
@@ -22,7 +22,7 @@ export default function TermsOfService() {
                 the DPLE company; the rights, obligations, and responsibilities of the purchaser;
                 and any other relevant matters.
             </Typography>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 2: Definition of Terms
             </Typography>
             <div className="ml-4">
@@ -69,7 +69,7 @@ export default function TermsOfService() {
                     individuals may directly make purchases using the internet.
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 3: Scope of Use
             </Typography>
             <div className="ml-4">
@@ -80,7 +80,7 @@ export default function TermsOfService() {
                     http://www.happy545.com
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 4: Start of Sales
             </Typography>
             <div className="ml-4">
@@ -95,7 +95,7 @@ export default function TermsOfService() {
                     (The Closure Date are subject to change depending on each period).
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 5: Method of Purchase
             </Typography>
             <div className="ml-4">
@@ -119,7 +119,7 @@ export default function TermsOfService() {
                     from the online system.
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 6: Method of Payment
             </Typography>
             <div className="ml-4">
@@ -128,7 +128,7 @@ export default function TermsOfService() {
                     recognized by the company during the purchase of a lottery ticket.
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 7: Lottery
             </Typography>
             <div className="ml-4">
@@ -147,7 +147,7 @@ export default function TermsOfService() {
                     <b>7.3.</b> The results of each rounds shall be identical nation-wide.
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 8: Winnings, Payment of Winnings
             </Typography>
             <div className="ml-4">
@@ -299,7 +299,7 @@ export default function TermsOfService() {
                     - The winnings may not be paid to a minor (under 18).
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 9: Loss of Right to Winnings
             </Typography>
             <div className="ml-4">
@@ -314,7 +314,7 @@ export default function TermsOfService() {
                     <b>9.3.</b> Valid receipts that have been canceled are non-refundable.
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 10: Cancellation of Lottery Receipts
             </Typography>
             <div className="ml-4">
@@ -340,7 +340,7 @@ export default function TermsOfService() {
                     time of lottery sales at 8pm (before the closure of the sales system).
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 11: Limitation of Liability
             </Typography>
             <div className="ml-4">
@@ -381,7 +381,7 @@ export default function TermsOfService() {
                     punishment and shall provide compensation for damages.
                 </Typography>
             </div>
-            <Typography variant="h5" color="blue-gray" className="mt-6 mb-2">
+            <Typography variant="h6" color="blue-gray" className="mt-6 mb-2">
                 Article 12: Dispute Settlement
             </Typography>
             <div className="ml-4">

@@ -13,22 +13,24 @@ export default function Notice() {
         <>
             {isLoading && <p>Loading...</p>}
             {error && <p>Something is wrong 😖</p>}
-            <div className="w-full">
-                <Typography variant="h5" color="blue-gray">
-                    Notice
-                </Typography>
-            </div>
-            <Card className="h-full w-full">
-                <CardHeader floated={false} shadow={false} className="rounded-none">
-                    <Search></Search>
-                </CardHeader>
-                <CardBody className="px-0">
-                    <NoticeTable notices={notices}></NoticeTable>
-                </CardBody>
-                <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Pagination count={count}></Pagination>
-                </CardFooter>
-            </Card>
+            <section className="w-full p-6">
+                <div>
+                    <Typography variant="h5" color="blue-gray">
+                        Notice
+                    </Typography>
+                </div>
+                <Card className="h-full w-full">
+                    <CardHeader floated={false} shadow={false} className="rounded-none">
+                        <Search></Search>
+                    </CardHeader>
+                    <CardBody className="px-0">
+                        <NoticeTable notices={notices}></NoticeTable>
+                    </CardBody>
+                    <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+                        <Pagination count={count}></Pagination>
+                    </CardFooter>
+                </Card>
+            </section>
         </>
     );
 }

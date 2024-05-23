@@ -16,23 +16,23 @@ export default function Faq() {
         <>
             {isLoading && <p>Loading...</p>}
             {error && <p>Something is wrong 😖</p>}
-            <div className="w-full">
+            <section className="w-full p-6">
                 <Typography variant="h5" color="blue-gray">
                     Faq
                 </Typography>
-            </div>
-            <Card className="h-full w-full p-5">
-                <CardHeader floated={false} shadow={false} className="rounded-none">
-                    <Search></Search>
-                </CardHeader>
-                <CardBody className="px-0">
-                    <FaqAccodians items={faqs}></FaqAccodians>
-                    {/* <NoticeTable notices={notices}></NoticeTable> */}
-                </CardBody>
-                <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Pagination count={count}></Pagination>
-                </CardFooter>
-            </Card>
+                <Card className="h-full w-full p-5">
+                    <CardHeader floated={false} shadow={false} className="rounded-none">
+                        <Search></Search>
+                    </CardHeader>
+                    <CardBody className="px-0">
+                        <FaqAccodians items={faqs}></FaqAccodians>
+                        {/* <NoticeTable notices={notices}></NoticeTable> */}
+                    </CardBody>
+                    <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+                        <Pagination count={count}></Pagination>
+                    </CardFooter>
+                </Card>
+            </section>
         </>
     );
 }
