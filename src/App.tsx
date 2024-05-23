@@ -3,11 +3,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import PageNotFound from './pages/PageNotFound';
 import AppLayout from './ui/AppLayout';
 import Login from './pages/Login';
-import LotteryInformation from './pages/LotteryInformation';
 import Result from './pages/Result';
 import GiftGame from './pages/GiftGame';
 import Store from './pages/Store';
-import AboutDlpe from './pages/AboutDlpe';
 import ServiceCenter from './pages/ServiceCenter';
 import Home from './pages/Home';
 import TermsOfService from './pages/TermsOfService';
@@ -58,11 +56,9 @@ function App() {
                     >
                         <Route index element={<Navigate replace to="home" />}></Route>
                         <Route path="home" element={<Home />}></Route>
-                        {/* <Route path="lottery-information" element={<LotteryInformation />}></Route> */}
                         <Route path="result" element={<Result />} />
                         <Route path="gift-game" element={<GiftGame />} />
                         <Route path="store" element={<Store />} />
-                        <Route path="about-dlpe" element={<AboutDlpe />} />
                         <Route path="service-center" element={<ServiceCenter />} />
                         <Route path="login" element={<Login />}></Route>
                         <Route path="join" element={<Join />} />
