@@ -22,7 +22,7 @@ export default function Faq() {
                 </Typography>
                 <Card className="h-full w-full p-5">
                     <CardHeader floated={false} shadow={false} className="rounded-none">
-                        <Search></Search>
+                        <Search searchPath="/service-center/faq"></Search>
                     </CardHeader>
                     <CardBody className="px-0">
                         <FaqAccodians items={faqs}></FaqAccodians>

@@ -21,7 +21,7 @@ export default function Notice() {
                 </div>
                 <Card className="h-full w-full">
                     <CardHeader floated={false} shadow={false} className="rounded-none">
-                        <Search></Search>
+                        <Search searchPath="/service-center/notice"></Search>
                     </CardHeader>
                     <CardBody className="px-0">
                         <NoticeTable notices={notices}></NoticeTable>

@@ -63,10 +63,12 @@ function App() {
                         <Route path="login" element={<Login />}></Route>
                         <Route path="join" element={<Join />} />
                         <Route path="service-center/faq" element={<Faq />} />
+                        <Route path="service-center/faq/:keyword" element={<Faq />} />
                         <Route path="service-center/notice" element={<Notice />} />
                         <Route path="service-center/notice/:keyword" element={<Notice />} />
                         <Route path="about-dlpe/introduction" element={<DlpeIntroduction />} />
                         <Route path="store/search-store" element={<SearchStore />} />
+                        <Route path="store/search-store/:keyword" element={<SearchStore />} />
                         <Route path="gift-game/happy-ball-5m" element={<HappyBall5m />} />
                         <Route path="gift-game/happy-ball-3m" element={<HappyBall3m />} />
                         <Route path="gift-game/gold-digger" element={<GoldDigger />} />

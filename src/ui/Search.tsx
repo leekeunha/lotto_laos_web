@@ -3,15 +3,13 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { Input } from '@material-tailwind/react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-export default function Search() {
+export default function Search({ searchPath }) {
     const { keyword } = useParams();
     const navigate = useNavigate();
     const [text, setText] = useState('');
     const handleSubmit = (e) => {
-        // console.log('handleSubmit');
-        // console.log('text: ', text);
         e.preventDefault();
-        navigate(`/service-center/notice/${text}`);
+        navigate(`${searchPath}/${text}`);
     };
 
     useEffect(() => setText(keyword || ''), [keyword]);
