@@ -7,8 +7,6 @@ import Pagination from '../ui/Pagination';
 import useNotice from '../features/serviceCenter/useNotice';
 
 export default function Notice() {
-    // const { serviceCenterService } = useServiceCenterServiceStore();
-    // const {} = useNotice();
     const { notices, isLoading, count, error } = useNotice();
 
     return (

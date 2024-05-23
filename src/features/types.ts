@@ -41,3 +41,17 @@ export interface SearchStore {
     location: string;
     map: string;
 }
+
+export interface FaqResponse {
+    kind: string;
+    etag: string;
+    items: Faq[];
+    pageInfo: PageInfo;
+    nextPageToken?: string;
+}
+
+export interface Faq {
+    id: number;
+    question: string;
+    answer: string;
+}

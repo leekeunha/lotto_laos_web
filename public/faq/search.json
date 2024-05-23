@@ -1,0 +1,62 @@
+{
+    "kind": "notice#searchListResponse",
+    "etag": "KJaF0_8ioyxQlvUBPj4SfxTuV7U",
+    "nextPageToken": "CBkQAA",
+    "regionCode": "KR",
+    "pageInfo": {
+        "totalResults": 5,
+        "resultsPerPage": 10
+    },
+    "items": [
+        {
+            "id": 1,
+            "question": "What do lottery revenues benefit?",
+            "answer": "Some part of lottery revenues, both Lao government and DLPE decide to create plan to make CSR project such as: re-skill or re-training of Lao workers, Local Government Welfare Programs, Lao Household Support and Supporting Programs for Children, Pregnant Women, Elderly, and People with Disabilities"
+        },
+        {
+            "id": 2,
+            "question": "Do lottery tickets expire?",
+            "answer": "Yes, all lottery tickets expire. Deadlines vary from game to game with claim periods ranging 30 days from the date of payment of winnings. Playing online (Mobile App) eliminates the risk of missing out on a prize as any winnings are paid directly into your account."
+        },
+        {
+            "id": 3,
+            "question": "How much for the ticket?",
+            "answer": "The ticket is sold only 5,000 kip per game and you can play 5 games on one slip sheet."
+        },
+        {
+            "id": 4,
+            "question": "I have lost my ticket. What should I do?",
+            "answer": "Our company is not responsible for the ticket which cannot be recognized due to loss or damage to the ticket. To avoid losing your ticket, you can play online through mobile app. As your ticket or number selection is securely stored online, there is no danger of you losing your play slip."
+        },
+        {
+            "id": 5,
+            "question": "There’s a problem with my ticket. Can I get a refund?",
+            "answer": "Validly issued lottery tickets are nonrefundable. So please be sure to check the number on the purchase ticket matches the chosen number."
+        },
+        {
+            "id": 6,
+            "question": "Where can I find lottery result?",
+            "answer": "You can watch the live lottery broadcast or click through our website “………………” and another social media platform. In addition, we have mobile app which is available for checking results, buy lottery online and any other interesting function. Please check the link below for try it out."
+        },
+        {
+            "id": 7,
+            "question": "What kind of prizes does happy 5/45 serve?",
+            "answer": "Happy 5/45 provides you a chance to win a First prize /Jackpot (Minimum 1.250.000.000 Kip with cumulative on sales value) and another specific award from a ticket which costs only 5,000 kip per game. Check the link for more information about Prize structure."
+        },
+        {
+            "id": 8,
+            "question": "What will happen if we have no 1st prize winner yet?",
+            "answer": "If there is no 1st prize winner, the winnings will be carried over to the next round until we have the winner."
+        },
+        {
+            "id": 9,
+            "question": "Can winners remain anonymous?",
+            "answer": "For safety, you can wear a mask which is designed to make you feel comfortable when you come to claim the prize and take photo."
+        },
+        {
+            "id": 10,
+            "question": "How long do I have to claim my prize?",
+            "answer": "The time to claim a prize is 30 days from the date of payment of winnings."
+        }
+    ]
+}
