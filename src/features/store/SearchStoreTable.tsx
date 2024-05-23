@@ -9,25 +9,13 @@ import {
 } from '@material-tailwind/react';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
-import { SEARCH_STORE_TABLE_HEAD } from '../../constants';
-
-const containerStyle = {
-    width: '400px',
-    height: '400px',
-};
+import { GOOGLE_MAPS_API_KEY, SEARCH_STORE_TABLE_HEAD } from '../../constants';
+import Map from '../../ui/Map';
 
 const defaultCenter = {
-    lat: 0,
-    lng: 0,
+    lat: 37.7749,
+    lng: -122.4194,
 };
-
-function Map({ center }) {
-    return (
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
-            <Marker position={center} />
-        </GoogleMap>
-    );
-}
 
 export default function SearchStoreTable({ stores }) {
     const [open, setOpen] = useState(false);
@@ -38,7 +26,7 @@ export default function SearchStoreTable({ stores }) {
     useEffect(() => {
         if (selectedLocation) {
             fetch(
-                `https://maps.googleapis.com/maps/api/geocode/json?address=${selectedLocation}&key=AIzaSyAcP2PHO1tdFQ4LfL99B92C7q7KCE6GA_s`,
+                `https://maps.googleapis.com/maps/api/geocode/json?address=${selectedLocation}&key=${GOOGLE_MAPS_API_KEY}`,
             )
                 .then((response) => response.json())
                 .then((data) => {
