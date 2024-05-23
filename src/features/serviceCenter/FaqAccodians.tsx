@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
 
 export function FaqAccodians({ items }) {
-    const [open, setOpen] = React.useState(1);
+    const [open, setOpen] = React.useState(0);
     const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
     return (

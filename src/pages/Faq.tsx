@@ -26,7 +26,6 @@ export default function Faq() {
                     </CardHeader>
                     <CardBody className="px-0">
                         <FaqAccodians items={faqs}></FaqAccodians>
-                        {/* <NoticeTable notices={notices}></NoticeTable> */}
                     </CardBody>
                     <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                         <Pagination count={count}></Pagination>
