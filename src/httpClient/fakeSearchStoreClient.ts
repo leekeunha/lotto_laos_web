@@ -5,7 +5,7 @@ export default class FakeSearchStoreClient {
         try {
             console.log('FakeSearchStoreClient keyword', keyword);
             console.log('FakeSearchStoreClient page', page);
-            const response = await axios.get('/store/searchStore.json', {
+            const response = await axios.get('/data/store/search.json', {
                 params: {
                     q: keyword,
                     page,
