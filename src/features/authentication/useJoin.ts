@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
-import { useUserServiceStore } from '../../store/userServiceStore';
+import { useUserServiceStore } from '../../store/useUserServiceStore';
 import { JoinParams } from '../types';
 
 export default function useJoin() {

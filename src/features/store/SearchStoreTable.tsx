@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, IconButton } from '@material-tailwind/react';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { LoadScript } from '@react-google-maps/api';
+import { LoadScript, GoogleMap, Marker } from '@react-google-maps/api';
 import { GOOGLE_MAPS_API_KEY, SEARCH_STORE_TABLE_HEAD } from '../../utils/constants';
-
 import StoreDialog from './SearchStoreDialog';
-import useGeocode from '../../hooks/useGeoCode';
+import { useGoogleMapService } from '../../store/useGoogleMapService';
 
 export default function SearchStoreTable({ stores }) {
     const [open, setOpen] = useState(false);
     const [selectedDistributor, setSelectedDistributor] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
-    const mapCenter = useGeocode(selectedLocation, GOOGLE_MAPS_API_KEY);
+    const [mapCenter, setMapCenter] = useState({ lat: 0, lng: 0 }); // 초기 좌표 설정
+    const { googleMapService } = useGoogleMapService();
+
+    useEffect(() => {
+        if (selectedLocation) {
+            googleMapService.getCoordinates(selectedLocation).then((coordinates) => {
+                if (coordinates) {
+                    setMapCenter(coordinates); // 비동기적으로 좌표 업데이트
+                }
+            });
+        }
+    }, [selectedLocation, googleMapService]);
 
     const handleOpen = (location, distributor) => {
         setSelectedLocation(location);

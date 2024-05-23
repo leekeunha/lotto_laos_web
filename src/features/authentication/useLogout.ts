@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useUserServiceStore } from '../../store/userServiceStore';
+import { useUserServiceStore } from '../../store/useUserServiceStore';
 
 export const useLogout = () => {
     const { userService } = useUserServiceStore();
