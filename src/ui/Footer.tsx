@@ -4,9 +4,12 @@ export default function Footer() {
     return (
         <footer className="">
             <div className="flex justify-between">
-                <div>
+                <div className="px-52">
                     <Typography variant="small">
-                        Email <a href="https://material-tailwind.com/">support@dlpe.la</a>
+                        Email &nbsp;
+                        <a href="mailto:support@dlpe.la" className="text-blue-500">
+                            support@dlpe.la
+                        </a>
                     </Typography>
                     <Typography variant="small">
                         Address: Floor 5, Tha Luang Square Building
@@ -19,7 +22,10 @@ export default function Footer() {
                         DLPE Company Limited, All rights reserved
                     </Typography>
                 </div>
-                <img className="h-12" src="/images/logo.png" alt="Logo" />
+                <div className="flex justify-end px-52">
+                    <img className="h-12" src="/images/dlpe.png" alt="dlpe" />
+                    <img className="h-12" src="/images/lao_lottery.png" alt="lao_lottery" />
+                </div>
             </div>
         </footer>
     );
