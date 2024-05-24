@@ -3,10 +3,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import PageNotFound from './pages/PageNotFound';
 import AppLayout from './ui/AppLayout';
 import Login from './pages/Login';
-import Result from './pages/Result';
-import GiftGame from './pages/GiftGame';
-import Store from './pages/Store';
-import ServiceCenter from './pages/ServiceCenter';
 import Home from './pages/Home';
 import TermsOfService from './pages/TermsOfService';
 import Notice from './pages/Notice';
@@ -15,11 +11,6 @@ import Join from './pages/Join.tsx';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import DlpeIntroduction from './pages/DlpeIntroduction.tsx';
 import SearchStore from './pages/SearchStore.tsx';
-import HappyBall5m from './pages/HappyBall5m.tsx';
-import HappyBall3m from './pages/HappyBall3m.tsx';
-import GoldDigger from './pages/GoldDigger.tsx';
-import ExchangeGift from './pages/ExchangeGift.tsx';
-import GiftRanking from './pages/GiftRanking.tsx';
 import JackpotNumbers from './pages/JackpotNumbers.tsx';
 import PrizePayment from './pages/PrizePayment.tsx';
 import DrawVideo from './pages/DrawVideo.tsx';
@@ -56,10 +47,6 @@ function App() {
                     >
                         <Route index element={<Navigate replace to="home" />}></Route>
                         <Route path="home" element={<Home />}></Route>
-                        <Route path="result" element={<Result />} />
-                        <Route path="gift-game" element={<GiftGame />} />
-                        <Route path="store" element={<Store />} />
-                        <Route path="service-center" element={<ServiceCenter />} />
                         <Route path="login" element={<Login />}></Route>
                         <Route path="join" element={<Join />} />
                         <Route path="service-center/faq" element={<Faq />} />
@@ -69,11 +56,6 @@ function App() {
                         <Route path="about-dlpe/introduction" element={<DlpeIntroduction />} />
                         <Route path="store/search-store" element={<SearchStore />} />
                         <Route path="store/search-store/:keyword" element={<SearchStore />} />
-                        <Route path="gift-game/happy-ball-5m" element={<HappyBall5m />} />
-                        <Route path="gift-game/happy-ball-3m" element={<HappyBall3m />} />
-                        <Route path="gift-game/gold-digger" element={<GoldDigger />} />
-                        <Route path="gift-game/gift-ranking" element={<GiftRanking />} />
-                        <Route path="gift-game/exchange-gift" element={<ExchangeGift />} />
                         <Route path="result/jackpot-numbers" element={<JackpotNumbers />} />
                         <Route path="result/prize-payment" element={<PrizePayment />} />
                         <Route path="result/draw-video" element={<DrawVideo />} />
