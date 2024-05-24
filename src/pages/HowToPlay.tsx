@@ -11,7 +11,7 @@ export default function HowToPlay() {
             <div className="space-y-4">
                 <div className="flex items-start gap-4">
                     <img
-                        src="/lotteryInformation/visit545.png"
+                        src="/images/lotteryInformation/visit545.png"
                         alt="Visit the Happy 5/45 store"
                         className="w-16"
                     />
@@ -35,7 +35,7 @@ export default function HowToPlay() {
             <div className="space-y-4">
                 <div className="flex items-start gap-4">
                     <img
-                        src="/lotteryInformation/select_number.png"
+                        src="/images/lotteryInformation/select_number.png"
                         alt="Select number"
                         className="w-16"
                     />
@@ -48,7 +48,7 @@ export default function HowToPlay() {
                             <br />- You can ask the seller to proceed with automatic selection.
                         </Typography>
                         <img
-                            src="/lotteryInformation/number_selection_method_lotto_paper.png"
+                            src="/images/lotteryInformation/number_selection_method_lotto_paper.png"
                             alt="Select number example"
                             className="mt-4 w-2/3"
                         />
@@ -59,7 +59,7 @@ export default function HowToPlay() {
             <div className="space-y-4">
                 <div className="flex items-start gap-4">
                     <img
-                        src="/lotteryInformation/number_selection_method.png"
+                        src="/images/lotteryInformation/number_selection_method.png"
                         alt="Number selection method"
                         className="w-16"
                     />
@@ -78,7 +78,7 @@ export default function HowToPlay() {
                             number that is not selected will be automatically selected randomly.
                         </Typography>
                         <img
-                            src="/lotteryInformation/number_selection_method_lotto_paper.png"
+                            src="/images/lotteryInformation/number_selection_method_lotto_paper.png"
                             alt="Select number example"
                             className="mt-4 w-2/3"
                         />
@@ -88,7 +88,11 @@ export default function HowToPlay() {
 
             <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                    <img src="/lotteryInformation/purchase.png" alt="Purchase" className="w-16" />
+                    <img
+                        src="/images/lotteryInformation/purchase.png"
+                        alt="Purchase"
+                        className="w-16"
+                    />
                     <div>
                         <Typography variant="h6" color="blue">
                             4. Purchase
@@ -111,7 +115,7 @@ export default function HowToPlay() {
             <div className="space-y-4">
                 <div className="flex items-start gap-4">
                     <img
-                        src="/lotteryInformation/confirm_purchase.png"
+                        src="/images/lotteryInformation/confirm_purchase.png"
                         alt="Confirm the purchase ticket"
                         className="w-16"
                     />
@@ -137,7 +141,7 @@ export default function HowToPlay() {
             <div className="space-y-4">
                 <div className="flex items-start gap-4">
                     <img
-                        src="/lotteryInformation/confirmation_wining.png"
+                        src="/images/lotteryInformation/confirmation_wining.png"
                         alt="Confirmation of winning"
                         className="w-16"
                     />
