@@ -40,7 +40,8 @@ export default function SearchStoreTable({ stores }) {
     };
 
     return (
-        <LoadScript googleMapsApiKey={GOOGLE_MAPS_API_KEY}>
+        //TODO: env파일
+        <LoadScript googleMapsApiKey={'AIzaSyAcP2PHO1tdFQ4LfL99B92C7q7KCE6GA_s'}>
             <table className="w-full min-w-max table-auto text-left">
                 <thead>
                     <tr>

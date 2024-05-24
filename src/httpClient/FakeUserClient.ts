@@ -1,13 +1,12 @@
 import axios from 'axios';
-
-import { Use } from '../../utils/constants';
 import { USER_API_CLIENT_URL } from '../utils/constants';
 export default class FakeUserClient {
     private httpClient;
 
     constructor() {
         this.httpClient = axios.create({
-            baseURL: USER_API_CLIENT_URL,
+            //TODO : env 파일
+            baseURL: 'https://reqres.in/api',
         });
     }
 
