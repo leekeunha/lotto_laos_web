@@ -10,7 +10,7 @@ export default function SearchStore() {
         <>
             {isLoading && <p>Loading...</p>}
             {error && <p>Something is wrong 😖</p>}
-            <div className="w-2/3 p-10">
+            <div className="p-10">
                 <Typography variant="h4" color="blue-gray">
                     SearchStore
                 </Typography>
