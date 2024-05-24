@@ -1,6 +1,7 @@
 import { create } from 'zustand';
-import FakeSearchStoreClient from '../httpClient/FakeSearchStoreClient';
+
 import { SearchStoreService } from '../services/SearchStoreService';
+import FakeSearchStoreClient from '../httpClient/FakeSearchStoreClient';
 
 export const useSearchStoreService = create(() => {
     const client = new FakeSearchStoreClient();
