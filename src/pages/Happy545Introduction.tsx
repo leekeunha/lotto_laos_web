@@ -3,7 +3,7 @@ import { Typography } from '@material-tailwind/react';
 
 export default function Happy545Introduction() {
     return (
-        <div className="w-full p-6 font-sans">
+        <div className="w-2/3 p-10">
             <Typography variant="h4" color="blue-gray" className="text-left mb-6">
                 Introduction
             </Typography>

@@ -3,7 +3,7 @@ import { Typography } from '@material-tailwind/react';
 
 export default function HowToPlay() {
     return (
-        <div className="p-6 space-y-8">
+        <div className="space-y-8 w-2/3 p-10">
             <Typography variant="h4" color="blue-gray" className="text-left mb-6">
                 How to play
             </Typography>

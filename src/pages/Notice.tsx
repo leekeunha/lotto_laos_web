@@ -13,9 +13,9 @@ export default function Notice() {
         <>
             {isLoading && <p>Loading...</p>}
             {error && <p>Something is wrong 😖</p>}
-            <section className="w-full p-6">
+            <section className="w-2/3 p-10">
                 <div>
-                    <Typography variant="h5" color="blue-gray">
+                    <Typography variant="h4" color="blue-gray">
                         Notice
                     </Typography>
                 </div>

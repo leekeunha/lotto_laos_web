@@ -2,8 +2,8 @@ import { Typography } from '@material-tailwind/react';
 
 export default function DlpeIntroduction() {
     return (
-        <div className="w-full p-6 font-sans">
-            <div className="w-2/3 mt-10 mx-auto">
+        <div className="w-2/3 font-sans p-10">
+            <div>
                 <Typography variant="h4" color="blue-gray" className="text-left mb-6">
                     Introduction
                 </Typography>

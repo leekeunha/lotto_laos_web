@@ -10,22 +10,22 @@ export default function SearchStore() {
         <>
             {isLoading && <p>Loading...</p>}
             {error && <p>Something is wrong 😖</p>}
-            <div className="w-full">
-                <Typography variant="h5" color="blue-gray">
+            <div className="w-2/3 p-10">
+                <Typography variant="h4" color="blue-gray">
                     SearchStore
                 </Typography>
+                <Card className="h-full w-full">
+                    <CardHeader floated={false} shadow={false} className="rounded-none">
+                        <Search searchPath="/store/search-store"></Search>
+                    </CardHeader>
+                    <CardBody className="px-0">
+                        <SearchStoreTable stores={stores}></SearchStoreTable>
+                    </CardBody>
+                    <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
+                        <Pagination count={count}></Pagination>
+                    </CardFooter>
+                </Card>
             </div>
-            <Card className="h-full w-full">
-                <CardHeader floated={false} shadow={false} className="rounded-none">
-                    <Search searchPath="/store/search-store"></Search>
-                </CardHeader>
-                <CardBody className="px-0">
-                    <SearchStoreTable stores={stores}></SearchStoreTable>
-                </CardBody>
-                <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-                    <Pagination count={count}></Pagination>
-                </CardFooter>
-            </Card>
         </>
     );
 }

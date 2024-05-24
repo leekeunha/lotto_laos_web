@@ -12,13 +12,13 @@ const imgSrc = ['/images/randing_how.png', '/images/randing_contact.png'];
 
 const Home = () => {
     return (
-        <main className="flex flex-col items-center justify-center w-2/3">
+        <div className="flex flex-col items-center justify-center w-2/3 p-10">
             <ImageSlider images={imgSliderSrc} />
             <div className="w-full my-5">
                 <YoutubeVideo videoId="r-rrUGDvLZo" />
             </div>
             <AdditionalImages images={imgSrc} />
-        </main>
+        </div>
     );
 };
 

@@ -11,8 +11,8 @@ export default function Faq() {
         <>
             {isLoading && <p>Loading...</p>}
             {error && <p>Something is wrong 😖</p>}
-            <section className="w-full p-6">
-                <Typography variant="h5" color="blue-gray">
+            <section className="w-2/3 p-10">
+                <Typography variant="h4" color="blue-gray">
                     Faq
                 </Typography>
                 <Card className="h-full w-full p-5">

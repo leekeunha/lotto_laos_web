@@ -3,8 +3,8 @@ import { Typography } from '@material-tailwind/react';
 
 export default function TermsOfService() {
     return (
-        <div className="w-full p-6">
-            <Typography variant="h5" color="blue-gray" className="text-left mb-6">
+        <div className="w-2/3 p-10">
+            <Typography variant="h4" color="blue-gray" className="text-left mb-6">
                 Terms of Service
             </Typography>
             <Typography color="blue-gray" className="text-sm mt-2">

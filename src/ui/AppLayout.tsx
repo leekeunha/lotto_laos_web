@@ -10,7 +10,7 @@ function AppLayout() {
             <hr className="border-gray-400" />
             <Topbar />
             <hr className="border-blue-400" />
-            <main className="p-4 overflow-auto">
+            <main className="overflow-auto">
                 <div className="flex flex-col gap-8 items-center">
                     <Outlet />
                 </div>
