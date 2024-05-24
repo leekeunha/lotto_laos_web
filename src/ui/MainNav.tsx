@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-import {
-    Collapse,
-    Typography,
-    Menu,
-    MenuHandler,
-    MenuList,
-    MenuItem,
-} from '@material-tailwind/react';
-import { NavLink } from 'react-router-dom';
+import { Collapse } from '@material-tailwind/react';
 import NavList from './NavList';
 
 export default function MainNav() {

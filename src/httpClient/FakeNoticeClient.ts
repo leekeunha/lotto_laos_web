@@ -10,10 +10,10 @@ export default class FakeNoticeClient {
                 },
             });
 
-            return response.data; // 응답 데이터를 반환
+            return response.data;
         } catch (error) {
             console.error('Error fetching data:', error);
-            throw error; // 오류 발생 시 예외를 던집니다.
+            throw error;
         }
     }
 }

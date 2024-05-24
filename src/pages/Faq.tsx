@@ -1,15 +1,10 @@
 import { Card, CardHeader, Typography, CardBody, CardFooter } from '@material-tailwind/react';
-
 import Search from '../ui/Search';
-import NoticeTable from '../features/serviceCenter/NoticeTable';
-
 import Pagination from '../ui/Pagination';
-import useNotice from '../features/serviceCenter/useNotice';
-import { DefaultAccordion, FaqAccodians } from '../features/serviceCenter/FaqAccodians';
+import { FaqAccodians } from '../features/serviceCenter/FaqAccodians';
 import useFaq from '../features/serviceCenter/useFaq';
 
 export default function Faq() {
-    // const { data, isLoading, count, error } = useNotice();
     const { faqs, isLoading, count, error } = useFaq();
 
     return (

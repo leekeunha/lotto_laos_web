@@ -1,4 +1,3 @@
-import { Button } from '@material-tailwind/react';
 import LoginForm from '../features/authentication/LoginForm';
 import Logo from '../ui/Logo';
 

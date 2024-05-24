@@ -28,12 +28,7 @@ export default function Pagination({ count }) {
         setSearchParams(searchParams);
     }
 
-    // if (pageCount <= 1) return null;
-
-    const pages = [];
-    for (let i = 1; i <= pageCount; i++) {
-        pages.push(i);
-    }
+    const pages = Array.from({ length: pageCount }, (value, index) => index + 1);
 
     return (
         <>

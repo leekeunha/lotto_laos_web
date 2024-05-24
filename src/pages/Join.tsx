@@ -1,7 +1,5 @@
 import { Typography } from '@material-tailwind/react';
 import Logo from '../ui/Logo';
-import { NavLink } from 'react-router-dom';
-import Register from '../features/authentication/Register';
 import RegisterMethodSelector from '../features/authentication/RegisterMethodSelector';
 
 export default function Join() {

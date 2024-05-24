@@ -7,23 +7,20 @@ import StoreDialog from './SearchStoreDialog';
 import { useQuery } from '@tanstack/react-query';
 import { useGoogleMapService } from '../../store/useGoogleMapService';
 
-// GoogleMapService 인스턴스를 생성합니다.
-
 export default function SearchStoreTable({ stores }) {
     const [open, setOpen] = useState(false);
     const [selectedDistributor, setSelectedDistributor] = useState(null);
     const [selectedLocation, setSelectedLocation] = useState(null);
-    const [mapCenter, setMapCenter] = useState({ lat: 0, lng: 0 }); // 초기 좌표 설정
+    const [mapCenter, setMapCenter] = useState({ lat: 0, lng: 0 });
     const { googleMapService } = useGoogleMapService();
-    // 선택된 위치가 변경될 때마다 Google Maps API를 호출하여 좌표를 가져옵니다.
+
     const { data: coordinates } = useQuery({
         queryKey: ['geocode', selectedLocation],
         queryFn: () => googleMapService.getCoordinates(selectedLocation),
-        enabled: !!selectedLocation, // selectedLocation이 있을 때만 쿼리를 실행합니다.
-        staleTime: 1000 * 60 * 5, // 5분 동안 데이터를 신선하게 유지합니다.
+        enabled: !!selectedLocation,
+        staleTime: 1000 * 60 * 5,
     });
 
-    // coordinates가 변경될 때 mapCenter를 업데이트합니다.
     useEffect(() => {
         if (coordinates) {
             setMapCenter(coordinates);

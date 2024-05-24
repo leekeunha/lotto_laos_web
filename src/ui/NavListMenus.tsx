@@ -10,42 +10,9 @@ import {
     storeMenuItems,
 } from '../utils/menuItem';
 
-function getNavMenuItems(navListMenuItems, disableFirstItem = false) {
-    return navListMenuItems.map(({ url, label }, index) => {
-        if (disableFirstItem && index === 0) {
-            return (
-                <MenuItem key={label} className="cursor-text">
-                    <Typography variant="small" color="blue" className="font-normal">
-                        {label}
-                    </Typography>
-                </MenuItem>
-            );
-        }
-        if (label.toLowerCase() === 'contact') {
-            return (
-                <MenuItem key={label} onClick={() => window.open('mailto:support@dlpe.la')}>
-                    <Typography variant="small" color="gray" className="font-normal">
-                        {label}
-                    </Typography>
-                </MenuItem>
-            );
-        }
-        return (
-            <NavLink to={url} key={label}>
-                <MenuItem>
-                    <Typography variant="small" color="gray" className="font-normal">
-                        {label}
-                    </Typography>
-                </MenuItem>
-            </NavLink>
-        );
-    });
-}
-
 export default function NavListMenus() {
     const [isLotteryInfoOpen, setIsLotteryInfoOpen] = useState(false);
     const [isResultOpen, setIsResultOpen] = useState(false);
-    const [isGiftGame, setIsGiftGame] = useState(false);
     const [isStore, setIsStore] = useState(false);
     const [isAboutDlpe, setIsAboutDlpe] = useState(false);
     const [isServiceCenter, setIsServiceCenter] = useState(false);
@@ -124,4 +91,36 @@ export default function NavListMenus() {
             </Menu>
         </>
     );
+}
+
+function getNavMenuItems(navListMenuItems, disableFirstItem = false) {
+    return navListMenuItems.map(({ url, label }, index) => {
+        if (disableFirstItem && index === 0) {
+            return (
+                <MenuItem key={label} className="cursor-text">
+                    <Typography variant="small" color="blue" className="font-normal">
+                        {label}
+                    </Typography>
+                </MenuItem>
+            );
+        }
+        if (label.toLowerCase() === 'contact') {
+            return (
+                <MenuItem key={label} onClick={() => window.open('mailto:support@dlpe.la')}>
+                    <Typography variant="small" color="gray" className="font-normal">
+                        {label}
+                    </Typography>
+                </MenuItem>
+            );
+        }
+        return (
+            <NavLink to={url} key={label}>
+                <MenuItem>
+                    <Typography variant="small" color="gray" className="font-normal">
+                        {label}
+                    </Typography>
+                </MenuItem>
+            </NavLink>
+        );
+    });
 }

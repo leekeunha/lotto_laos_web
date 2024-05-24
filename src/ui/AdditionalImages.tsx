@@ -1,4 +1,3 @@
-// src/components/AdditionalImages.js
 import React from 'react';
 
 const AdditionalImages = ({ images }) => {
